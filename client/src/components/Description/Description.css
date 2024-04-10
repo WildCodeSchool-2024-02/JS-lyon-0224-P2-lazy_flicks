@@ -1,0 +1,28 @@
+body {
+  background: linear-gradient(black, #011420, #0e3249, #011420, black);
+}
+
+.container {
+  border: solid #e09e50;
+  border-radius: 1rem;
+  display: flex;
+  width: 50vw;
+}
+
+.picture {
+  height: 20rem;
+  padding: 2rem;
+}
+
+h1 {
+  color: #e09e50;
+}
+
+.text {
+  color: white;
+  text-align: center;
+}
+
+span {
+  color: #e09e50;
+}
