@@ -1,6 +1,22 @@
+import { useEffect, useState } from "react";
 import "./Body.css";
+import axios from "axios";
 
 function Body() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/157336?api_key=d153b88aa2e55557f40150e3cf446757"
+      )
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console(error);
+      });
+  }, []);
   return (
     <main>
       <div className="card">
@@ -24,6 +40,11 @@ function Body() {
             Search
           </button>
         </div>
+      </div>
+      <div>
+        {data && data.title && <p>{data.title}</p>}
+        {data && data.overview && <p>{data.overview}</p>}
+        {data && data.release_date && <p>{data.release_date}</p>}
       </div>
     </main>
   );
