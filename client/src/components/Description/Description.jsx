@@ -1,4 +1,23 @@
+import "./Description.css";
+import axios from "axios";
+import { useState, useEffect } from "react";
+
 function Description() {
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(
+        "https://api.themoviedb.org/3/movie/157336?api_key=d153b88aa2e55557f40150e3cf446757"
+      )
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console(error);
+      });
+  }, []);
+
   return (
     <main className="container">
       <div>
@@ -32,6 +51,11 @@ function Description() {
         <button className="button-watch" type="button">
           Watch
         </button>
+      </div>
+      <div>
+        {data && data.title && <p>{data.title}</p>}
+        {data && data.overview && <p>{data.overview}</p>}
+        {data && data.release_date && <p>{data.release_date}</p>}
       </div>
     </main>
   );
