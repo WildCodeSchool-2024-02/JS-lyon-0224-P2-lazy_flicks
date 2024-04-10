@@ -1,0 +1,12 @@
+body {
+  color: #eee;
+  margin: 0;
+}
+
+.container-Global {
+  height: 100vh;
+  background: linear-gradient(black, #011420, #0e3249, #011420, black);
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
