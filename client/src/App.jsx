@@ -1,10 +1,10 @@
 import "./App.css";
-import Footer from "./components/Footer/Footer";
+import Team from "./components/Team/Team";
 
 function App() {
   return (
-    <main className="container">
-      <Footer />
+    <main className="container-Global">
+      <Team />
     </main>
   );
 }
