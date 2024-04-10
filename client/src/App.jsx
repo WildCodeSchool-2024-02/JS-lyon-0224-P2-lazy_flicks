@@ -3,7 +3,7 @@ import Header from "./components/Header/Header";
 
 function App() {
   return (
-    <main className="container">
+    <main className="container-Global">
       <Header />
     </main>
   );

@@ -1,13 +1,9 @@
 body {
-  font-family: "Lato", sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.7;
   color: #eee;
   margin: 0;
 }
 
-.container {
+.container-Global {
   height: 100vh;
   background: linear-gradient(black, #011420, #0e3249, #011420, black);
   margin: 0;
