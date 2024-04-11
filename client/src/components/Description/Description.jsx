@@ -35,6 +35,7 @@ function Description() {
           <span className="rating">Rating :</span>
           {movie.vote_average}
         </p>
+        <p>Rating : {movie.vote_average}</p>
         <p>{movie.overview}</p>
       </div>
     </div>

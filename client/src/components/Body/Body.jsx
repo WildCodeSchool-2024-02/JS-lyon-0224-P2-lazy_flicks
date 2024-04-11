@@ -18,15 +18,16 @@ function Body() {
               <option value="">Sport</option>
               <option value="">Western</option>
               <option value="">Adult +18</option>
+              <option value="">Surprise</option>
             </select>
           </span>
         </div>
         <div className="type">
           <h2>Type :</h2>
-          <input type="checkbox" id="scales" name="scales" />
+          <input type="checkbox" id="series" name="series" />
           <label htmlFor="series">TV Shows</label>
-          <input type="checkbox" id="scales" name="scales" />
-          <label htmlFor="smovies">Films</label>
+          <input type="checkbox" id="movies" name="movies" />
+          <label htmlFor="movies">Films</label>
         </div>
         <div className="time">
           <h2>Time :</h2>

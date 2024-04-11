@@ -25,7 +25,9 @@ select {
   width: 40vw;
   border-style: none;
 }
-
+label {
+  color: white;
+}
 .thriller {
   margin: 0;
   margin-left: 2rem;
@@ -43,11 +45,14 @@ select {
 }
 .series {
   margin-right: 2rem;
-  color: #eee;
+  margin-left: 2rem;
+  color: white;
+  font-size: larger;
 }
 
 .movies {
-  color: #eee;
+  color: white;
+  font-size: larger;
 }
 
 .time {
