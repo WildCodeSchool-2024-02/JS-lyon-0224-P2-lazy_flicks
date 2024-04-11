@@ -1,6 +1,10 @@
+import { useState } from "react";
 import "./Body.css";
+import Description from "../Description/Description";
 
 function Body() {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
     <main>
       <div className="card">
@@ -39,9 +43,20 @@ function Body() {
             </select>
           </span>
         </div>
-        <button className="button-search" type="button">
-          Search
+        <button
+          onClick={() => setIsVisible(!isVisible)}
+          className="button-search"
+          type="button"
+        >
+          {isVisible ? "Search" : "Search"}
         </button>
+      </div>
+      <div>
+        {isVisible && (
+          <div>
+            <Description />
+          </div>
+        )}
       </div>
     </main>
   );
