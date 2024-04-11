@@ -31,7 +31,7 @@ function Description() {
       />
       <div>
         <h3>{movie.title}</h3>
-        <p>Vote moyen : {movie.vote_average}</p>
+        <p>Rating : {movie.vote_average}</p>
         <p>{movie.overview}</p>
       </div>
     </div>
