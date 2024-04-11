@@ -17,6 +17,7 @@
 .thriller {
   margin: 0;
   margin-left: 2rem;
+  border: 3px solid white;
 }
 .type {
   color: #e09e50;
@@ -27,23 +28,32 @@
 .series-movies {
   margin: 0;
   margin-left: 2.5rem;
+  border: 3px solid white;
 }
 .series {
   margin-right: 2rem;
+  color: #eee;
 }
+
+.movies {
+  color: #eee;
+}
+
 .time {
   color: #e09e50;
   display: flex;
   flex-direction: row;
   align-items: center;
 }
+
 .time-movies {
   margin: 0;
   margin-left: 2.5rem;
+  border: 3px solid white;
 }
 p {
   color: white;
-  border: 3px solid white;
+
   border-radius: 10px;
   width: 11rem;
   height: 1rem;
