@@ -4,7 +4,7 @@ body {
 }
 
 .container-Global {
-  height: 100vh;
+  height: 100%;
   background: linear-gradient(black, #011420, #0e3249, #011420, black);
   margin: 0;
   padding: 0;

@@ -6,16 +6,26 @@ body {
 
 .container {
   border: 3px solid #e09e50;
-  border-radius: 2rem;
+  border-radius: 20px;
+  padding: 10px;
+  margin: 20px;
+  background-color: rgba(30, 30, 30, 0.321);
+  min-width: 20rem;
   display: flex;
-  min-width: 50vw;
-  min-height: 50vh;
-  margin: 2rem;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
-.picture {
-  height: 20rem;
-  padding: 2rem;
+.PicDescOver {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+img {
+  padding: 1rem;
+  width: 30%;
+  height: 30%;
 }
 
 h1 {
@@ -25,11 +35,7 @@ h1 {
 .text {
   color: #eee;
   text-align: center;
-  margin-right: 2rem;
-}
-
-span {
-  color: #e09e50;
+  height: 100%;
 }
 
 .button-watch {
@@ -98,10 +104,4 @@ span {
   left: 0;
   top: 0;
   border-radius: 10px;
-}
-
-@media screen and (min-width: 50vw) {
-  .container {
-    width: 50vw;
-  }
 }
