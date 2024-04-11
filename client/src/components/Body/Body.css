@@ -25,7 +25,9 @@ select {
   width: 40vw;
   border-style: none;
 }
-
+label {
+  color: white;
+}
 .thriller {
   margin: 0;
   margin-left: 2rem;
