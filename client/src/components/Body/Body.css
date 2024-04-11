@@ -24,12 +24,16 @@
   flex-direction: row;
   align-items: center;
 }
-.series-movies {
-  margin: 0;
-  margin-left: 2.5rem;
-}
 .series {
   margin-right: 2rem;
+  margin-left: 2rem;
+  color: white;
+  font-size: larger;
+}
+
+.movies {
+  color: white;
+  font-size: larger;
 }
 .time {
   color: #e09e50;
@@ -63,7 +67,7 @@ p {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin-left: 8.5rem;
+  margin-left: 1.5rem;
 }
 .button-search:before {
   content: "";
