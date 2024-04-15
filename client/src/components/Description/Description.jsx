@@ -5,12 +5,13 @@ function Description() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
+    const ApiKey = import.meta.env.VITE_API_KEY;
+
     const options = {
       method: "GET",
       headers: {
         accept: "application/json",
-        Authorization:
-          "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJkMTUzYjg4YWEyZTU1NTU3ZjQwMTUwZTNjZjQ0Njc1NyIsInN1YiI6IjY2MTAwNTUzNDk3NTYwMDE2NDRlNTY4YiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.3TBcwlf8-XRG3fGNcNSfF1mf0fTlFfScJjzqTGXq-cc",
+        Authorization: `${ApiKey}`,
       },
     };
 
@@ -23,7 +24,7 @@ function Description() {
       .catch((err) => console.error(err));
   }, []);
 
-  const movieElements = movies.slice(1, 2).map((movie) => (
+  const movieElements = movies.map((movie) => (
     <div key={movie.id}>
       <img
         src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
