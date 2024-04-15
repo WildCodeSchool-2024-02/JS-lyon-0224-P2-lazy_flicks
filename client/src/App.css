@@ -1,6 +1,14 @@
+@font-face {
+  font-family: "Roboto";
+  src:
+    local("Roboto"),
+    url(./assets/fonts) format("truetype");
+}
+
 body {
   color: #eee;
   margin: 0;
+  font-family: Roboto;
 }
 
 main {

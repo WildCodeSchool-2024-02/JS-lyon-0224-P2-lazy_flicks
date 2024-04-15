@@ -48,11 +48,11 @@ function Body() {
           className="button-search"
           type="button"
         >
-          {isVisible ? "Search" : "Search"}
+          {isVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
       <div>
-        {isVisible && (
+        {isVisible !== false && (
           <div>
             <Description />
           </div>
