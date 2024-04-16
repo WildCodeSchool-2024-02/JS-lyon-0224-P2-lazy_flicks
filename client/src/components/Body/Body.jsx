@@ -11,18 +11,26 @@ function Body() {
         <div className="genre">
           <h2>Genre :</h2>
           <span className="GenreInput">
-            <select name="pets" id="pet-select">
-              <option value="">Action</option>
-              <option value="">Animation</option>
-              <option value="">Anime</option>
-              <option value="">Documentary</option>
-              <option value="">Fantasy</option>
-              <option value="">Horror</option>
-              <option value="">Romance</option>
-              <option value="">Sport</option>
-              <option value="">Western</option>
-              <option value="">Adult +18</option>
-              <option value="">Surprise</option>
+            <select name="movie" id="movie-select">
+              <option value="Action">Action</option>
+              <option value="Aventure">Aventure</option>
+              <option value="Animation">Animation</option>
+              <option value="Comedy">Comedy</option>
+              <option value="Crime">Crime</option>
+              <option value="Documentary">Documentary</option>
+              <option value="Drama">Drama</option>
+              <option value="Family">Family</option>
+              <option value="Fantasy">Fantasy</option>
+              <option value="History">History</option>
+              <option value="Horror">Horror</option>
+              <option value="Music">Music</option>
+              <option value="Mystery">Mystery</option>
+              <option value="Romance">Romance</option>
+              <option value="Science Fiction">Science Fiction</option>
+              <option value="TV Movie">TV Movie</option>
+              <option value="Thriller">Thriller</option>
+              <option value="War">War</option>
+              <option value="Western">Western</option>
             </select>
           </span>
         </div>
