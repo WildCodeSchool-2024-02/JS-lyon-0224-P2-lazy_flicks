@@ -16,7 +16,7 @@ function Description() {
     };
 
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc",
+      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&per_page=",
       options
     )
       .then((response) => response.json())
@@ -24,26 +24,24 @@ function Description() {
       .catch((err) => console.error(err));
   }, []);
 
-  const movieElements = movies.map((movie) => (
-    <div key={movie.id}>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <div>
-        <h3>{movie.title}</h3>
-        <p>
-          <span className="rating">Rating :</span>
-          {movie.vote_average} / 10
-        </p>
-        <p>{movie.overview}</p>
-      </div>
-    </div>
-  ));
-
   return (
     <main className="container">
-      <div>{movieElements}</div>
+      {movies.map((movie) => (
+        <div key={movie.id}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+            alt={movie.title}
+          />
+          <div>
+            <h3>{movie.title}</h3>
+            <p>
+              <span className="rating">Rating :</span>
+              {movie.vote_average} / 10
+            </p>
+            <p>{movie.overview}</p>
+          </div>
+        </div>
+      ))}
 
       <button className="button-watch" type="button">
         Watch
