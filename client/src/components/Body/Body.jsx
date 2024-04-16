@@ -4,19 +4,6 @@ import Description from "../Description/Description";
 
 function Body() {
   const [isVisible, setIsVisible] = useState(false);
-  // Définissez l'état local pour chaque case à cocher
-  const [seriesChecked, setSeriesChecked] = useState(false);
-  const [moviesChecked, setMoviesChecked] = useState(false);
-
-  // Fonction pour mettre à jour l'état lorsqu'une case à cocher est cochée ou décochée
-  const handleCheckboxChange = (event) => {
-    const { name, checked } = event.target;
-    if (name === "series") {
-      setSeriesChecked(checked);
-    } else if (name === "movies") {
-      setMoviesChecked(checked);
-    }
-  };
 
   return (
     <main>
@@ -41,29 +28,12 @@ function Body() {
         </div>
         <div className="type">
           <h2>Type :</h2>
-          <input
-            type="checkbox"
-            id="series"
-            name="series"
-            checked={seriesChecked}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="series">TV Shows</label>
-          <input
-            type="checkbox"
-            id="movies"
-            name="movies"
-            checked={moviesChecked}
-            onChange={handleCheckboxChange}
-          />
-          <label htmlFor="movies">Films</label>
-        </div>
-        <div className="type">
-          <h2>Type :</h2>
-          <input type="checkbox" id="series" name="series" />
-          <label htmlFor="series">TV Shows</label>
-          <input type="checkbox" id="movies" name="movies" />
-          <label htmlFor="movies">Films</label>
+          <span className="TypeInput">
+            <select name="Type" id="Type-select">
+              <option value="MovieValue">Movie</option>
+              <option value="TvShowValue">TV Show</option>
+            </select>
+          </span>
         </div>
         <div className="time">
           <h2>Time :</h2>
