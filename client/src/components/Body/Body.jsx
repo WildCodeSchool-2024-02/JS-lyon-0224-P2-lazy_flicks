@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./Body.css";
-import Description from "../Description/Description";
+import Series from "../Series/Series";
+import MovieType from "../MovieType/MovieType";
 
 function Body() {
   const [isVisible, setIsVisible] = useState(false);
@@ -8,6 +9,13 @@ function Body() {
 
   const handleSearch = () => {
     setIsVisible(true);
+  };
+
+  const [selectedType, setSelectedType] = useState(0);
+
+  const handleTypeChange = (event) => {
+    const selectedValue = event.target.value;
+    setSelectedType(selectedValue);
   };
 
   return (
@@ -41,6 +49,7 @@ function Body() {
               <option value="53">Thriller</option>
               <option value="10752">War</option>
               <option value="37">Western</option>
+
             </select>
           </span>
         </div>
@@ -48,6 +57,14 @@ function Body() {
           {isVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
+
+      {isVisible ? (
+        <>
+          {selectedType === "MovieValue" ? <MovieType /> : null}
+          {selectedType === "TvShowValue" ? <Series /> : null}
+        </>
+      ) : null}
+
       <div>
         {isVisible && selectedGenre && (
           <div>
@@ -55,6 +72,7 @@ function Body() {
           </div>
         )}
       </div>
+
     </main>
   );
 }

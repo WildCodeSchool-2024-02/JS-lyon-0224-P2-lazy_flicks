@@ -18,6 +18,7 @@ function Description({ selectedGenre }) {
     const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc&with_genres=${selectedGenre}`;
 
     fetch(url, options)
+
       .then((response) => response.json())
       .then((data) => setMovies(data.results))
       .catch((err) => console.error(err));
@@ -43,6 +44,7 @@ function Description({ selectedGenre }) {
   return (
     <main className="container">
       <div>{movieElements}</div>
+
     </main>
   );
 }
