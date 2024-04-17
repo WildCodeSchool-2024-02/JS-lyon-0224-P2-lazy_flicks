@@ -5,6 +5,11 @@ import MovieType from "../MovieType/MovieType";
 
 function Body() {
   const [isVisible, setIsVisible] = useState(false);
+  const [selectedGenre, setSelectedGenre] = useState(null);
+
+  const handleSearch = () => {
+    setIsVisible(true);
+  };
 
   const [selectedType, setSelectedType] = useState(0);
 
@@ -19,59 +24,55 @@ function Body() {
         <div className="genre">
           <h2>Genre :</h2>
           <span className="GenreInput">
-            <select name="pets" id="pet-select">
-              <option value="">Action</option>
-              <option value="">Animation</option>
-              <option value="">Anime</option>
-              <option value="">Documentary</option>
-              <option value="">Fantasy</option>
-              <option value="">Horror</option>
-              <option value="">Romance</option>
-              <option value="">Sport</option>
-              <option value="">Western</option>
-              <option value="">Adult +18</option>
-              <option value="">Surprise</option>
-            </select>
-          </span>
-        </div>
-        <div className="type">
-          <h2>Type :</h2>
-          <span className="TypeInput">
             <select
-              name="Type"
-              id="Type-select"
-              value={selectedType}
-              onChange={handleTypeChange}
+              name="movie"
+              id="movie-select"
+              onChange={(e) => setSelectedGenre(e.target.value)}
             >
-              <option value="MovieValue">Movie</option>
-              <option value="TvShowValue">TV Show</option>
+              <option value="">Select a genre</option>
+              <option value="28">Action</option>
+              <option value="12">Adventure</option>
+              <option value="16">Animation</option>
+              <option value="35">Comedy</option>
+              <option value="80">Crime</option>
+              <option value="99">Documentary</option>
+              <option value="18">Drama</option>
+              <option value="10751">Family</option>
+              <option value="14">Fantasy</option>
+              <option value="36">History</option>
+              <option value="27">Horror</option>
+              <option value="10402">Music</option>
+              <option value="9648">Mystery</option>
+              <option value="10749">Romance</option>
+              <option value="878">Science Fiction</option>
+              <option value="10770">TV Movie</option>
+              <option value="53">Thriller</option>
+              <option value="10752">War</option>
+              <option value="37">Western</option>
+
             </select>
           </span>
         </div>
-        <div className="time">
-          <h2>Time :</h2>
-          <span className="TimeInput">
-            <select name="pets" id="pet-select">
-              <option value="">Less than 2h</option>
-              <option value="">More than 2h</option>
-              <option value="">I don't have any friends</option>
-            </select>
-          </span>
-        </div>
-        <button
-          onClick={() => setIsVisible(!isVisible)}
-          className="button-search"
-          type="button"
-        >
+        <button onClick={handleSearch} className="button-search" type="button">
           {isVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
+
       {isVisible ? (
         <>
           {selectedType === "MovieValue" ? <MovieType /> : null}
           {selectedType === "TvShowValue" ? <Series /> : null}
         </>
       ) : null}
+
+      <div>
+        {isVisible && selectedGenre && (
+          <div>
+            <Description selectedGenre={selectedGenre} />
+          </div>
+        )}
+      </div>
+
     </main>
   );
 }
