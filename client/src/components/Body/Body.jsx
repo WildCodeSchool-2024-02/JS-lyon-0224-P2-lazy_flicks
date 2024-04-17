@@ -11,7 +11,7 @@ function Body() {
         <div className="genre">
           <h2>Genre :</h2>
           <span className="GenreInput">
-            <select name="pets" id="pet-select">
+            <select name="movies" id="movies-select">
               <option value="">Action</option>
               <option value="">Animation</option>
               <option value="">Anime</option>
@@ -35,7 +35,7 @@ function Body() {
         </div>
         <div className="Rated">
           <h2>Top Rated :</h2>
-          <input type="checkbox" id="Top Rated" name="Top Rated" />
+          <input type="checkbox" id="TopRated" name="Top Rated" />
         </div>
         <button
           onClick={() => setIsVisible(!isVisible)}

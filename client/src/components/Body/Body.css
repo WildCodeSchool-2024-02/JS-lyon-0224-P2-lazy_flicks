@@ -57,9 +57,13 @@ label {
 .Rated {
   color: #e09e50;
   display: flex;
-  justify-content: space-evenly;
   align-items: center;
   height: 15vw;
+  justify-content: space-evenly;
+}
+
+#TopRated {
+  margin-left: 2rem;
 }
 
 .button-search {
