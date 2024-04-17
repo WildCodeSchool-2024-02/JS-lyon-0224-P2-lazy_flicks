@@ -3,6 +3,7 @@ import "./Body.css";
 import Description from "../Description/Description";
 
 function Body() {
+  const [topRatedChecked, setTopRatedChecked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
 
   return (
@@ -30,12 +31,23 @@ function Body() {
           <h2>Type :</h2>
           <input type="checkbox" id="series" name="series" />
           <label htmlFor="series">TV Shows</label>
-          <input type="checkbox" id="movies" name="movies" />
+          <input
+            type="checkbox"
+            id="movies"
+            name="movies"
+            onChange={() => setTopRatedChecked(!topRatedChecked)}
+          />
           <label htmlFor="movies">Films</label>
         </div>
         <div className="Rated">
           <h2>Top Rated :</h2>
-          <input type="checkbox" id="TopRated" name="Top Rated" />
+          <input
+            type="checkbox"
+            id="TopRated"
+            name="Top Rated"
+            checked={topRatedChecked}
+            onChange={() => setTopRatedChecked(!topRatedChecked)}
+          />
         </div>
         <button
           onClick={() => setIsVisible(!isVisible)}
@@ -48,7 +60,7 @@ function Body() {
       <div>
         {isVisible !== false && (
           <div>
-            <Description />
+            <Description topRatedChecked={topRatedChecked} />
           </div>
         )}
       </div>
