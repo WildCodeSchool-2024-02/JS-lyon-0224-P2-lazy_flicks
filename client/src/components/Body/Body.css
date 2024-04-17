@@ -54,16 +54,12 @@ label {
   font-size: larger;
 }
 
-.time {
+.Rated {
   color: #e09e50;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   height: 15vw;
-}
-
-.time-movies {
-  margin: 0;
 }
 
 .button-search {

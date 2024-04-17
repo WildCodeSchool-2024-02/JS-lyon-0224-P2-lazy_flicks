@@ -33,15 +33,9 @@ function Body() {
           <input type="checkbox" id="movies" name="movies" />
           <label htmlFor="movies">Films</label>
         </div>
-        <div className="time">
-          <h2>Time :</h2>
-          <span className="TimeInput">
-            <select name="pets" id="pet-select">
-              <option value="">Less than 2h</option>
-              <option value="">More than 2h</option>
-              <option value="">I don't have any friends</option>
-            </select>
-          </span>
+        <div className="Rated">
+          <h2>Top Rated :</h2>
+          <input type="checkbox" id="Top Rated" name="Top Rated" />
         </div>
         <button
           onClick={() => setIsVisible(!isVisible)}
