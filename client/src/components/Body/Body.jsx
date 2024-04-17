@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./Body.css";
-import Description from "../Description/Description";
+import TopRated from "../TopRated/TopRated";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
@@ -60,7 +60,7 @@ function Body() {
       <div>
         {isVisible !== false && (
           <div>
-            <Description topRatedChecked={topRatedChecked} />
+            <TopRated topRatedChecked={topRatedChecked} />
           </div>
         )}
       </div>
