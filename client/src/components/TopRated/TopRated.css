@@ -1,72 +1,42 @@
-.card {
+.container {
   border: 3px solid #e09e50;
   border-radius: 20px;
   padding: 10px;
   margin: 20px;
   background-color: rgba(30, 30, 30, 0.321);
+  min-width: 20rem;
   display: flex;
   flex-direction: column;
-  justify-content: start;
-  min-width: 20rem;
-  margin-top: 70px;
+  flex-wrap: wrap;
 }
-.genre {
-  color: #e09e50;
-  margin: 0rem;
+
+.PicDescOver {
   display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 15vw;
+  flex-direction: row;
+  justify-content: center;
 }
 
-select {
-  font-size: 0.9rem;
-  width: 40vw;
-  border-style: none;
+img {
+  padding: 1rem;
+  width: 30%;
+  height: 30%;
 }
-label {
-  color: white;
-}
-.thriller {
-  margin: 0;
-  margin-left: 2rem;
-  border: 3px solid white;
-}
-.type {
+
+h1 {
   color: #e09e50;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  height: 15vw;
-}
-.series-movies {
-  margin: 0;
-}
-.series {
-  margin-right: 2rem;
-  margin-left: 2rem;
-  color: white;
-  font-size: larger;
 }
 
-.movies {
-  color: white;
-  font-size: larger;
-}
-
-.Rated {
+.rating {
   color: #e09e50;
-  display: flex;
-  align-items: center;
-  height: 15vw;
-  justify-content: space-evenly;
 }
 
-#TopRated {
-  margin-left: 2rem;
+.text {
+  color: #eee;
+  text-align: center;
+  height: 100%;
 }
 
-.button-search {
+.button-watch {
   padding: 0.6em 2em;
   border: none;
   outline: none;
@@ -79,10 +49,10 @@ label {
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 1rem;
-  cursor: pointer;
+  margin: 2rem;
 }
-.button-search:before {
+
+.button-watch:before {
   content: "";
   background: linear-gradient(
     45deg,
@@ -109,6 +79,7 @@ label {
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
 }
+
 @keyframes glowing-button-85 {
   0% {
     background-position: 0 0;
@@ -120,7 +91,8 @@ label {
     background-position: 0 0;
   }
 }
-.button-search:after {
+
+.button-watch:after {
   z-index: -1;
   content: "";
   position: absolute;
@@ -130,14 +102,4 @@ label {
   left: 0;
   top: 0;
   border-radius: 10px;
-}
-
-select option {
-  background-color: black;
-  opacity: 0.5;
-  color: white;
-}
-
-option {
-  opacity: 0.5;
 }

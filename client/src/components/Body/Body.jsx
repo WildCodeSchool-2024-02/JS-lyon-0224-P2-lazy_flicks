@@ -5,6 +5,7 @@ import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
 
 function Body() {
+  const [topRatedChecked, setTopRatedChecked] = useState(false);
   const [isVisible, setIsVisible] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState(null);
 
@@ -50,17 +51,46 @@ function Body() {
               <option value="53">Thriller</option>
               <option value="10752">War</option>
               <option value="37">Western</option>
+
             </select>
           </span>
         </div>
         <div className="genre">
           <h2>Type :</h2>
+
+          <input type="checkbox" id="series" name="series" />
+          <label htmlFor="series">TV Shows</label>
+          <input
+            type="checkbox"
+            id="movies"
+            name="movies"
+            onChange={() => setTopRatedChecked(!topRatedChecked)}
+          />
+          <label htmlFor="movies">Films</label>
+        </div>
+        <div className="Rated">
+          <h2>Top Rated :</h2>
+          <input
+            type="checkbox"
+            id="TopRated"
+            name="Top Rated"
+            checked={topRatedChecked}
+            onChange={() => setTopRatedChecked(!topRatedChecked)}
+          />
+        </div>
+        <button
+          onClick={() => setIsVisible(!isVisible)}
+          className="button-search"
+          type="button"
+        >
+
           <select onChange={handleTypeChange}>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>
           </select>
         </div>
         <button onClick={handleSearch} className="button-search" type="button">
+
           {isVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
@@ -75,7 +105,11 @@ function Body() {
       <div>
         {isVisible && selectedGenre && (
           <div>
+
+            <Description topRatedChecked={topRatedChecked} />
+
             <Description selectedGenre={selectedGenre} />
+
           </div>
         )}
       </div>
