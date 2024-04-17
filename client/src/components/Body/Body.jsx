@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Body.css";
-import Description from "../Description/Description";
 import Series from "../Series/Series";
+import MovieType from "../MovieType/MovieType";
 
 function Body() {
   const [isVisible, setIsVisible] = useState(false);
@@ -68,7 +68,7 @@ function Body() {
       </div>
       {isVisible ? (
         <>
-          {selectedType === "MovieValue" ? <Description /> : null}
+          {selectedType === "MovieValue" ? <MovieType /> : null}
           {selectedType === "TvShowValue" ? <Series /> : null}
         </>
       ) : null}
