@@ -37,17 +37,21 @@ function Series() {
   return (
     <main className="container">
       {randomSerie && (
-        <div key={randomSerie.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
-            alt={randomSerie.original_name}
-          />
-          <div>
-            <h3>{randomSerie.original_name}</h3>
-            <p>
-              <span className="rating">Rating :</span>
-              {randomSerie.vote_average} / 10
-            </p>
+        <div className="PrincipalDiv">
+          <div className="ImgDiv" key={randomSerie.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
+              alt={randomSerie.original_name}
+            />
+          </div>
+          <div className="DateRate">
+            <h2>{randomSerie.original_name}</h2>
+            <span className="rating">Release date : </span>
+            <p>{randomSerie.release_date}</p>
+            <span className="rating">Rating :</span>
+            <p>{randomSerie.vote_average} / 10</p>
+          </div>
+          <div className="Overview">
             <p>{randomSerie.overview}</p>
           </div>
         </div>

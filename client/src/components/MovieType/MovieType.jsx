@@ -37,23 +37,22 @@ function MovieType() {
   return (
     <main className="container">
       {randomMovie && (
-        <div key={randomMovie.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
-            alt={randomMovie.title}
-          />
-          <div>
-            <h3>{randomMovie.title}</h3>
-            <p>
-              <span className="rating">Release date : </span>
-              {randomMovie.release_date}
-            </p>
-            <p>
-              <span className="rating">Rating : </span>
-              {randomMovie.vote_average} / 10
-            </p>
+        <div className="PrincipalDiv">
+          <div className="ImgDiv" key={randomMovie.id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
+              alt={randomMovie.title}
+            />
           </div>
-          <div>
+          <div className="DateRate">
+            <h2>{randomMovie.title}</h2>
+            <span className="rating">Release date : </span>
+            <p>{randomMovie.release_date}</p>
+            <span className="rating">Rating : </span>
+            <p>{randomMovie.vote_average} / 10</p>
+          </div>
+
+          <div className="Overview">
             <p>{randomMovie.overview}</p>
           </div>
         </div>

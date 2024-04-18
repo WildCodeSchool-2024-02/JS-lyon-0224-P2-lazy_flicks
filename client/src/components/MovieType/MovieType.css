@@ -5,9 +5,6 @@
   margin: 20px;
   background-color: rgba(30, 30, 30, 0.321);
   min-width: 20rem;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
 }
 
 .PicDescOver {
@@ -16,22 +13,34 @@
   justify-content: center;
 }
 
-img {
-  width: 50%;
-  height: 50%;
-}
-
 .PrincipalDiv {
   display: flex;
-  height: 200px;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding: 1rem;
 }
 
-.TitleRatingDiv {
-  min-width: 70px;
+.DateRate {
+  text-align: left;
+  max-width: 200px;
 }
 
-h1 {
+.ImgDiv {
+  width: 150px;
+  height: 100%;
+}
+
+.ImgDiv img {
+  width: 100%;
+  padding: 0;
+}
+
+.Overview {
+  text-align: justify;
+}
+h1,
+h2 {
   color: #e09e50;
 }
 
@@ -65,14 +74,14 @@ h1 {
   content: "";
   background: linear-gradient(
     45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
     #ff0000
   );
   position: absolute;
