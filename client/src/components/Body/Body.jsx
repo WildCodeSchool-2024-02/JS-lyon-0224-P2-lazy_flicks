@@ -74,15 +74,19 @@ function Body() {
         </div>
 
         <button onClick={handleSearch} className="button-search" type="button">
-          {isSectionVisible ? "Search Again" : "Search"}
+          {isSectionVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
 
-      {isSectionVisible && selectedType === "MovieValue" && <MovieType />}
+      {isSectionVisible !== false && selectedType === "MovieValue" && (
+        <MovieType />
+      )}
 
-      {isSectionVisible && selectedType === "TvShowValue" && <Series />}
+      {isSectionVisible !== false && selectedType === "TvShowValue" && (
+        <Series />
+      )}
 
-      {isSectionVisible && selectedGenre && (
+      {isSectionVisible !== false && selectedGenre && (
         <div>
           <TopRated topRatedChecked={topRatedChecked} />
           <Description selectedGenre={selectedGenre} />
