@@ -6,32 +6,29 @@ function TopRated({ topRatedChecked }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    const ApiKey = import.meta.env.VITE_API_KEY;
+    if (topRatedChecked) {
+      const ApiKey = import.meta.env.VITE_API_KEY;
 
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `${ApiKey}`,
-      },
-    };
-    fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc",
-      options
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        if (topRatedChecked) {
-          const sortedMovies = data.results.sort(
-            (a, b) => b.vote_average - a.vote_average
-          );
-          const highestRated = sortedMovies.length > 0 ? sortedMovies[0] : null;
-          setMovies(highestRated ? [highestRated] : []);
-        } else {
-          setMovies(data.results);
-        }
-      })
-      .catch((err) => console.error(err));
+      const options = {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: `${ApiKey}`,
+        },
+      };
+
+      fetch(
+        "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1",
+        options
+      )
+        .then((response) => response.json())
+        .then((data) => {
+          const randomIndex = Math.floor(Math.random() * data.results.length);
+          const randomMovie = data.results[randomIndex];
+          setMovies(randomMovie ? [randomMovie] : []);
+        })
+        .catch((err) => console.error(err));
+    }
   }, [topRatedChecked]);
 
   const movieElements = movies.map((movie) => (
@@ -52,15 +49,18 @@ function TopRated({ topRatedChecked }) {
   ));
 
   TopRated.propTypes = {
-    topRatedChecked: PropTypes.string.isRequired,
+    topRatedChecked: PropTypes.bool.isRequired,
   };
 
   return (
     <main className="container">
-      <div>{movieElements}</div>
-      <button className="button-watch" type="button">
-        Watch
-      </button>
+      {topRatedChecked && <div>{movieElements}</div>}
+
+      {topRatedChecked && (
+        <button className="button-watch" type="button">
+          Watch
+        </button>
+      )}
     </main>
   );
 }
