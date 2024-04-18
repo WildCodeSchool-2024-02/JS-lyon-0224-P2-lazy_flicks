@@ -17,9 +17,18 @@
 }
 
 img {
-  padding: 1rem;
-  width: 30%;
-  height: 30%;
+  width: 50%;
+  height: 50%;
+}
+
+.PrincipalDiv {
+  display: flex;
+  height: 200px;
+  flex-direction: row;
+}
+
+.TitleRatingDiv {
+  min-width: 70px;
 }
 
 h1 {

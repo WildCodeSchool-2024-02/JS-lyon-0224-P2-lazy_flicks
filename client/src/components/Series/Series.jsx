@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 function Series() {
   const [series, setSeries] = useState([]);
+  const [randomIndexSerie, setRandomIndexSerie] = useState(null);
 
   useEffect(() => {
     const ApiKey = import.meta.env.VITE_API_KEY;
@@ -16,7 +17,7 @@ function Series() {
     };
 
     fetch(
-      "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=1",
+      "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=2",
       options
     )
       .then((response) => response.json())
@@ -24,24 +25,33 @@ function Series() {
       .catch((err) => console.error(err));
   }, []);
 
+  useEffect(() => {
+    if (series.length > 0) {
+      const randomIndex = Math.floor(Math.random() * series.length);
+      setRandomIndexSerie(randomIndex);
+    }
+  }, [series]);
+
+  const randomSerie = series[randomIndexSerie];
+
   return (
     <main className="container">
-      {series.map((serie) => (
-        <div key={serie.id}>
+      {randomSerie && (
+        <div key={randomSerie.id}>
           <img
-            src={`https://image.tmdb.org/t/p/w500/${serie.poster_path}`}
-            alt={serie.original_name}
+            src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
+            alt={randomSerie.original_name}
           />
           <div>
-            <h3>{serie.original_name}</h3>
+            <h3>{randomSerie.original_name}</h3>
             <p>
               <span className="rating">Rating :</span>
-              {serie.vote_average} / 10
+              {randomSerie.vote_average} / 10
             </p>
-            <p>{serie.overview}</p>
+            <p>{randomSerie.overview}</p>
           </div>
         </div>
-      ))}
+      )}
 
       <button className="button-watch" type="button">
         Watch

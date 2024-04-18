@@ -3,7 +3,6 @@ import "./Body.css";
 import Series from "../Series/Series";
 import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
-import TopRated from "../TopRated/TopRated";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
@@ -12,7 +11,9 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    setIsSectionVisible(true);
+    if (selectedGenre && selectedType) {
+      setIsSectionVisible(true);
+    }
   };
 
   const handleTypeChange = (event) => {
@@ -57,7 +58,7 @@ function Body() {
         <div className="genre">
           <h2>Type :</h2>
           <select onChange={handleTypeChange}>
-            <option value="">Select a movie</option>
+            <option value="">Select a type</option>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>
           </select>
@@ -78,17 +79,19 @@ function Body() {
         </button>
       </div>
 
-      {isSectionVisible && selectedType === "MovieValue" && <MovieType />}
-
-      {isSectionVisible && selectedType === "TvShowValue" && <Series />}
-
       {isSectionVisible && selectedGenre && (
-        <div>
-          <TopRated topRatedChecked={topRatedChecked} />
-          <Description selectedGenre={selectedGenre} />
-        </div>
+        <Description selectedGenre={selectedGenre} />
+      )}
+
+      {isSectionVisible && selectedType === "MovieValue" && selectedGenre && (
+        <MovieType />
+      )}
+
+      {isSectionVisible && selectedType === "TvShowValue" && selectedGenre && (
+        <Series />
       )}
     </main>
   );
 }
+
 export default Body;
