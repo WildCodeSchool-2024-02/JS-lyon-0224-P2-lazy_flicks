@@ -56,6 +56,10 @@ function Description({ selectedGenre }) {
   return (
     <main className="container">
       <div>{movieElement}</div>
+
+      <button className="button-watch" type="button">
+        Watch
+      </button>
     </main>
   );
 }
