@@ -37,7 +37,7 @@ function MovieType() {
   return (
     <main className="container">
       {randomMovie && (
-        <div className="PrincipalDiv" key={randomMovie.id}>
+        <div key={randomMovie.id}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
             alt={randomMovie.title}
@@ -52,6 +52,8 @@ function MovieType() {
               <span className="rating">Rating : </span>
               {randomMovie.vote_average} / 10
             </p>
+          </div>
+          <div>
             <p>{randomMovie.overview}</p>
           </div>
         </div>
