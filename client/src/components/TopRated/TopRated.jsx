@@ -52,7 +52,7 @@ function TopRated({ topRatedChecked }) {
   ));
 
   TopRated.propTypes = {
-    topRatedChecked: PropTypes.string.isRequired,
+    topRatedChecked: PropTypes.bool.isRequired,
   };
 
   return (
