@@ -16,7 +16,7 @@ function MovieType() {
     };
 
     fetch(
-      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&per_page=",
+      "https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&per_page=?_limit=10",
       options
     )
       .then((response) => response.json())
@@ -27,7 +27,7 @@ function MovieType() {
   return (
     <main className="container">
       {moviesType.map((movie) => (
-        <div key={movie.id}>
+        <div className="PrincipalDiv" key={movie.id}>
           <img
             src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
             alt={movie.title}
@@ -35,7 +35,11 @@ function MovieType() {
           <div>
             <h3>{movie.title}</h3>
             <p>
-              <span className="rating">Rating :</span>
+              <span className="rating">Release date : </span>
+              {movie.release_date}
+            </p>
+            <p>
+              <span className="rating">Rating : </span>
               {movie.vote_average} / 10
             </p>
             <p>{movie.overview}</p>
