@@ -3,6 +3,7 @@ import "./Body.css";
 import Series from "../Series/Series";
 import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
+import TopRated from "../TopRated/TopRated";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
@@ -78,6 +79,10 @@ function Body() {
           {isSectionVisible ? "Search Again" : "Search"}
         </button>
       </div>
+
+      {isSectionVisible && topRatedChecked && (
+        <TopRated topRatedChecked={topRatedChecked} />
+      )}
 
       {isSectionVisible && selectedGenre && (
         <Description selectedGenre={selectedGenre} />
