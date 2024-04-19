@@ -23,12 +23,13 @@
 
 .DateRate {
   text-align: left;
-  max-width: 200px;
+  max-width: 160px;
 }
 
 .ImgDiv {
   width: 150px;
   height: 100%;
+  margin-top: 8px;
 }
 
 .ImgDiv img {
