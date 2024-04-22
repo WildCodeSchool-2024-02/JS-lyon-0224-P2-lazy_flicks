@@ -4,49 +4,68 @@ import PropTypes from "prop-types";
 
 function Description({ selectedGenre }) {
   const [movies, setMovies] = useState([]);
+  const [randomIndexGenre, setRandomIndexGenre] = useState(null);
 
   useEffect(() => {
-    const ApiKey = import.meta.env.VITE_API_KEY;
-
-    const options = {
-      method: "GET",
-      headers: {
-        accept: "application/json",
-        Authorization: `${ApiKey}`,
-      },
+    const fetchMovies = async () => {
+      try {
+        const apiKey = import.meta.env.VITE_API_KEY;
+        const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc&with_genres=${selectedGenre}`;
+        const options = {
+          method: "GET",
+          headers: {
+            accept: "application/json",
+            Authorization: `${apiKey}`,
+          },
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        setMovies(data.results);
+      } catch (error) {
+        console.error(error);
+      }
     };
-    const url = `https://api.themoviedb.org/3/discover/movie?include_adult=false&include_video=false&language=en-US&page=2&sort_by=popularity.desc&with_genres=${selectedGenre}`;
 
-    fetch(url, options)
-
-      .then((response) => response.json())
-      .then((data) => setMovies(data.results))
-      .catch((err) => console.error(err));
+    fetchMovies();
   }, [selectedGenre]);
 
-  const movieElements = movies.map((movie) => (
-    <div key={movie.id}>
+  useEffect(() => {
+    if (movies.length > 0) {
+      const randomIndex = Math.floor(Math.random() * movies.length);
+      setRandomIndexGenre(randomIndex);
+    }
+  }, [movies]);
+
+  const randomMovie = movies[randomIndexGenre];
+
+  const movieElement = randomMovie && (
+    <div key={randomMovie.id}>
       <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={movie.title}
+        src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
+        alt={randomMovie.title}
       />
-      <h3>{movie.title}</h3>
+      <h3>{randomMovie.title}</h3>
       <p>
         <span className="rating">Rating :</span>
-        {movie.vote_average} / 10
+        {randomMovie.vote_average} / 10
       </p>
-      <p>{movie.overview}</p>
+      <p>{randomMovie.overview}</p>
     </div>
-  ));
-  Description.propTypes = {
-    selectedGenre: PropTypes.string.isRequired,
-  };
+  );
+
   return (
     <main className="container">
-      <div>{movieElements}</div>
+      <div>{movieElement}</div>
 
+      <button className="button-watch" type="button">
+        Watch
+      </button>
     </main>
   );
 }
+
+Description.propTypes = {
+  selectedGenre: PropTypes.string.isRequired,
+};
 
 export default Description;

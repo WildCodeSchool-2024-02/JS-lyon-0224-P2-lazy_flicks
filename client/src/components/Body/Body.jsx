@@ -12,7 +12,9 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    setIsSectionVisible(true);
+    if (selectedGenre && selectedType) {
+      setIsSectionVisible(true);
+    }
   };
 
   const handleTypeChange = (event) => {
@@ -57,7 +59,7 @@ function Body() {
         <div className="genre">
           <h2>Type :</h2>
           <select onChange={handleTypeChange}>
-            <option value="">Select a movie</option>
+            <option value="">Select a type</option>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>
           </select>
@@ -77,7 +79,6 @@ function Body() {
           {isSectionVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
-
       {isSectionVisible !== false && selectedType === "MovieValue" && (
         <MovieType />
       )}
@@ -95,4 +96,5 @@ function Body() {
     </main>
   );
 }
+
 export default Body;
