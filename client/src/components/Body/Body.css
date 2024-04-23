@@ -9,6 +9,7 @@
   justify-content: start;
   min-width: 20rem;
   margin-top: 70px;
+  max-height: 30rem;
 }
 .genre {
   color: #e09e50;
@@ -21,7 +22,7 @@
 
 select {
   font-size: 0.9rem;
-  width: 40vw;
+  max-width: 40vw;
   border-style: none;
 }
 label {
@@ -60,6 +61,15 @@ label {
   align-items: center;
   height: 15vw;
   justify-content: space-evenly;
+}
+
+input[type="checkbox"] {
+  width: 2em;
+  height: 2rem;
+  accent-color: #e09e50;
+}
+input[type="checkbox"]:hover {
+  color: black;
 }
 
 #TopRated {
@@ -140,4 +150,31 @@ select option {
 
 option {
   opacity: 0.5;
+}
+
+@media screen and (min-width: 800px) {
+  .threeSection {
+    display: flex;
+    max-height: 50rem;
+  }
+
+  .card {
+    margin: 30px 20px 0px 20px;
+    max-width: 20rem;
+    flex-wrap: wrap;
+  }
+
+  .genre {
+    height: 5vw;
+  }
+
+  .Rated {
+    height: 5vw;
+  }
+
+  select {
+    font-size: 0.9rem;
+    width: 15vw;
+    border-style: none;
+  }
 }

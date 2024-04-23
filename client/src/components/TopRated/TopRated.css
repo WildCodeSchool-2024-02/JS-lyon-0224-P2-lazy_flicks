@@ -16,14 +16,44 @@
   justify-content: center;
 }
 
+.PrincipalDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.DateRate {
+  text-align: left;
+  max-width: 160px;
+}
+
+.ImgDiv {
+  max-width: 120px;
+  height: 100%;
+}
+
+.ImgDiv img {
+  width: 100%;
+  padding: 0;
+}
+
+.Overview {
+  text-align: justify;
+}
+
 img {
   padding: 1rem;
   width: 30%;
   height: 30%;
 }
 
-h1 {
+h1,
+h2 {
   color: #e09e50;
+  margin: 0;
+  padding: 0;
 }
 
 .rating {
@@ -102,4 +132,10 @@ h1 {
   left: 0;
   top: 0;
   border-radius: 10px;
+}
+
+@media screen and (min-width: 800px) {
+  .container {
+    max-width: 20rem;
+  }
 }

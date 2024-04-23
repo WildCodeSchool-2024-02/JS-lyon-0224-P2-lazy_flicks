@@ -4,7 +4,7 @@
   padding: 10px;
   margin: 20px;
   background-color: rgba(30, 30, 30, 0.321);
-  min-width: 20rem;
+  max-width: 20rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
@@ -15,6 +15,32 @@
   flex-direction: row;
   justify-content: center;
 }
+.PrincipalDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
+}
+
+.DateRate {
+  text-align: left;
+  max-width: 160px;
+}
+
+.ImgDiv {
+  max-width: 120px;
+  height: 100%;
+}
+
+.ImgDiv img {
+  width: 100%;
+  padding: 0;
+}
+
+.Overview {
+  text-align: justify;
+}
 
 img {
   padding: 1rem;
@@ -22,8 +48,11 @@ img {
   height: 30%;
 }
 
-h1 {
+h1,
+h2 {
   color: #e09e50;
+  margin: 0;
+  padding: 0;
 }
 
 .rating {

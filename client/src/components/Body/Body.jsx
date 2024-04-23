@@ -67,6 +67,7 @@ function Body() {
         <div className="Rated">
           <h2>Top Rated :</h2>
           <input
+            className="inputCheck"
             type="checkbox"
             id="TopRated"
             name="Top Rated"
@@ -79,22 +80,22 @@ function Body() {
           {isSectionVisible ? "Search Again" : "Search"}
         </button>
       </div>
+      <div className="threeSection">
+        {isSectionVisible && selectedType === "MovieValue" && selectedGenre && (
+          <MovieType />
+        )}
 
-      {isSectionVisible && topRatedChecked && (
-        <TopRated topRatedChecked={topRatedChecked} />
-      )}
+        {isSectionVisible &&
+          selectedType === "TvShowValue" &&
+          selectedGenre && <Series />}
+        {isSectionVisible && topRatedChecked && (
+          <TopRated topRatedChecked={topRatedChecked} />
+        )}
 
-      {isSectionVisible && selectedGenre && (
-        <Description selectedGenre={selectedGenre} />
-      )}
-
-      {isSectionVisible && selectedType === "MovieValue" && selectedGenre && (
-        <MovieType />
-      )}
-
-      {isSectionVisible && selectedType === "TvShowValue" && selectedGenre && (
-        <Series />
-      )}
+        {isSectionVisible && selectedGenre && (
+          <Description selectedGenre={selectedGenre} />
+        )}
+      </div>
     </main>
   );
 }

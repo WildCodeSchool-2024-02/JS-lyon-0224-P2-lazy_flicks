@@ -5,6 +5,9 @@
   margin: 20px;
   background-color: rgba(30, 30, 30, 0.321);
   min-width: 20rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
 
 .PicDescOver {
@@ -17,7 +20,7 @@
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 1rem;
 }
 
@@ -27,9 +30,8 @@
 }
 
 .ImgDiv {
-  width: 150px;
+  max-width: 120px;
   height: 100%;
-  margin-top: 8px;
 }
 
 .ImgDiv img {
@@ -40,9 +42,18 @@
 .Overview {
   text-align: justify;
 }
+
+img {
+  padding: 1rem;
+  width: 30%;
+  height: 30%;
+}
+
 h1,
 h2 {
   color: #e09e50;
+  margin: 0;
+  padding: 0;
 }
 
 .rating {
