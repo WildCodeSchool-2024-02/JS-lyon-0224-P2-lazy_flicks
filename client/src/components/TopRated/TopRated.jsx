@@ -31,6 +31,16 @@ function TopRated({ topRatedChecked }) {
     }
   }, [topRatedChecked]);
 
+  const handleWatchButtonClick = () => {
+    if (movies.length > 0) {
+      const movieId = movies[0].id;
+      window.open(
+        `https://www.themoviedb.org/movie/${movieId}/watch`,
+        "_blank"
+      );
+    }
+  };
+
   const movieElements = movies.map((movie) => (
     <div key={movie.id}>
       <img
@@ -57,7 +67,11 @@ function TopRated({ topRatedChecked }) {
       {topRatedChecked && <div>{movieElements}</div>}
 
       {topRatedChecked && (
-        <button className="button-watch" type="button">
+        <button
+          className="button-watch"
+          type="button"
+          onClick={handleWatchButtonClick}
+        >
           Watch
         </button>
       )}
