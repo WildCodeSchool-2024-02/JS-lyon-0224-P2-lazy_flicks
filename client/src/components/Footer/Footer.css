@@ -16,6 +16,10 @@
   margin: 0;
   padding: 0;
 }
+.TeamButton {
+  text-decoration: none;
+  color: white;
+}
 
 @media screen and (min-width: 800px) {
   .FooterLazy {
