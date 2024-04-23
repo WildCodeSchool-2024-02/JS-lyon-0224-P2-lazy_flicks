@@ -45,23 +45,29 @@ function Description({ selectedGenre }) {
   };
 
   const movieElement = randomMovie && (
-    <div key={randomMovie.id}>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
-        alt={randomMovie.title}
-      />
-      <h3>{randomMovie.title}</h3>
-      <p>
+    <div className="PrincipalDiv" key={randomMovie.id}>
+      <div className="ImgDiv">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
+          alt={randomMovie.title}
+        />
+      </div>
+      <div className="DateRate">
+        <h2>{randomMovie.title}</h2>
+        <span className="rating">Release date : </span>
+        <p>{randomMovie.release_date}</p>
         <span className="rating">Rating :</span>
-        {randomMovie.vote_average} / 10
-      </p>
-      <p>{randomMovie.overview}</p>
+        <p>{randomMovie.vote_average} / 10</p>
+      </div>
+      <div className="Overview">
+        <p>{randomMovie.overview}</p>
+      </div>
     </div>
   );
 
   return (
     <main className="container">
-      <div>{movieElement}</div>
+      <div className="contained">{movieElement}</div>
 
       <button className="button-watch" type="button" onClick={watchMovie}>
         Watch

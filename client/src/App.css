@@ -11,6 +11,9 @@ body {
 
 main {
   padding-bottom: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .container-Global {
   background: linear-gradient(black, #011420, #0e3249, #011420, black);
@@ -18,4 +21,10 @@ main {
   padding: 0;
   text-align: center;
   min-height: 100vh;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    padding-bottom: 8rem;
+  }
 }

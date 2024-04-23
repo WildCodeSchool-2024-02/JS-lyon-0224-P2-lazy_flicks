@@ -43,31 +43,29 @@ function MovieType() {
     }
   };
 
+  const randomMovieElement = randomMovie && (
+    <div className="PrincipalDiv" key={randomMovie.id}>
+      <div className="ImgDiv">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
+          alt={randomMovie.title}
+        />
+      </div>
+      <div className="DateRate">
+        <h2>{randomMovie.title}</h2>
+        <span className="rating">Release date : </span>
+        <p>{randomMovie.release_date}</p>
+        <span className="rating">Rating : </span>
+        <p>{randomMovie.vote_average}/ 10</p>
+      </div>
+      <div className="Overview">
+        <p>{randomMovie.overview}</p>
+      </div>
+    </div>
+  );
   return (
     <main className="container">
-      {randomMovie && (
-        <div key={randomMovie.id}>
-          <img
-            src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
-            alt={randomMovie.title}
-          />
-          <div>
-            <h3>{randomMovie.title}</h3>
-            <p>
-              <span className="rating">Release date : </span>
-              {randomMovie.release_date}
-            </p>
-            <p>
-              <span className="rating">Rating : </span>
-              {randomMovie.vote_average} / 10
-            </p>
-          </div>
-          <div>
-            <p>{randomMovie.overview}</p>
-          </div>
-        </div>
-      )}
-
+      <div>{randomMovieElement}</div>
       <button className="button-watch" type="button" onClick={handleWatchClick}>
         Watch
       </button>

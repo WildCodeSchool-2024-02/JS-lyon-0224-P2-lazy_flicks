@@ -42,17 +42,22 @@ function TopRated({ topRatedChecked }) {
   };
 
   const movieElements = movies.map((movie) => (
-    <div key={movie.id}>
-      <img
-        src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
-        alt={movie.title}
-      />
-      <div>
-        <h3>{movie.title}</h3>
-        <p>
-          <span className="rating">Rating :</span>
-          {movie.vote_average} / 10
-        </p>
+    <div className="PrincipalDiv" key={movie.id}>
+      <div className="ImgDiv">
+        <img
+          src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
+          alt={movie.title}
+        />
+      </div>
+      <div className="DateRate">
+        <h2>{movie.title}</h2>
+        <span className="rating">Release date : </span>
+        <p>{movie.release_date}</p>
+        <span className="rating">Rating :</span>
+        <p>{movie.vote_average} / 10</p>
+      </div>
+
+      <div className="Overview">
         <p>{movie.overview}</p>
       </div>
     </div>

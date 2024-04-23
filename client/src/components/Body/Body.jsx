@@ -73,6 +73,7 @@ function Body() {
         <div className="Rated">
           <h2>Top Rated :</h2>
           <input
+            className="inputCheck"
             type="checkbox"
             id="TopRated"
             name="Top Rated"

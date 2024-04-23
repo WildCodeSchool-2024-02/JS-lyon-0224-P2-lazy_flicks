@@ -16,23 +16,44 @@
   justify-content: center;
 }
 
-img {
-  width: 50%;
-  height: 50%;
-}
-
 .PrincipalDiv {
   display: flex;
-  height: 200px;
   flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 1rem;
 }
 
-.TitleRatingDiv {
-  min-width: 70px;
+.DateRate {
+  text-align: left;
+  max-width: 160px;
 }
 
-h1 {
+.ImgDiv {
+  max-width: 120px;
+  height: 100%;
+}
+
+.ImgDiv img {
+  width: 100%;
+  padding: 0;
+}
+
+.Overview {
+  text-align: justify;
+}
+
+img {
+  padding: 1rem;
+  width: 30%;
+  height: 30%;
+}
+
+h1,
+h2 {
   color: #e09e50;
+  margin: 0;
+  padding: 0;
 }
 
 .rating {
@@ -65,14 +86,14 @@ h1 {
   content: "";
   background: linear-gradient(
     45deg,
-    #ff0000,
-    #ff7300,
-    #fffb00,
-    #48ff00,
-    #00ffd5,
-    #002bff,
-    #7a00ff,
-    #ff00c8,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
+    #e09e50,
+    #eee,
     #ff0000
   );
   position: absolute;
