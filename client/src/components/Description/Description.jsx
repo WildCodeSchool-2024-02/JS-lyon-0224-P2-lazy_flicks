@@ -40,7 +40,7 @@ function Description({ selectedGenre }) {
 
   const watchMovie = () => {
     if (randomMovie) {
-      window.location.href = `https://www.themoviedb.org/movie/${randomMovie.id}/watch`;
+      window.open(`https://www.themoviedb.org/movie/${randomMovie.id}/watch`);
     }
   };
 
