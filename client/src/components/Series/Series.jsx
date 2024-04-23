@@ -4,8 +4,6 @@ import { useState, useEffect } from "react";
 function Series() {
   const [series, setSeries] = useState([]);
   const [randomIndexSerie, setRandomIndexSerie] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
 
   useEffect(() => {
     const ApiKey = import.meta.env.VITE_API_KEY;
@@ -30,12 +28,8 @@ function Series() {
       })
       .then((data) => {
         setSeries(data.results);
-        setLoading(false);
       })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+      .catch((err) => console.error(err));
   }, []);
 
   useEffect(() => {
@@ -58,8 +52,6 @@ function Series() {
 
   const randomSerieElement = randomSerie && (
     <div className="PrincipalDiv">
-      {loading && <p>Loading...</p>}
-      {error && <p>Error: {error}</p>}
       <div className="ImgDiv" key={randomSerie.id}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
