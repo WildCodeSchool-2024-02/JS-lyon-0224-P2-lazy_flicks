@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 function Series() {
   const [series, setSeries] = useState([]);
   const [randomIndexSerie, setRandomIndexSerie] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const ApiKey = import.meta.env.VITE_API_KEY;
@@ -20,9 +22,20 @@ function Series() {
       "https://api.themoviedb.org/3/tv/top_rated?language=en-US&page=2",
       options
     )
-      .then((response) => response.json())
-      .then((data) => setSeries(data.results))
-      .catch((err) => console.error(err));
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Failed to fetch series");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setSeries(data.results);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
   }, []);
 
   useEffect(() => {
@@ -34,8 +47,19 @@ function Series() {
 
   const randomSerie = series[randomIndexSerie];
 
+  const handleWatchButtonClick = () => {
+    if (randomSerie) {
+      window.open(
+        `https://www.themoviedb.org/tv/${randomSerie.id}/watch`,
+        "_blank"
+      );
+    }
+  };
+
   const randomSerieElement = randomSerie && (
     <div className="PrincipalDiv">
+      {loading && <p>Loading...</p>}
+      {error && <p>Error: {error}</p>}
       <div className="ImgDiv" key={randomSerie.id}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
@@ -59,7 +83,11 @@ function Series() {
     <main className="container">
       <div>{randomSerieElement}</div>
 
-      <button className="button-watch" type="button">
+      <button
+        className="button-watch"
+        type="button"
+        onClick={handleWatchButtonClick}
+      >
         Watch
       </button>
     </main>

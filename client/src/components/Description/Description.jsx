@@ -38,6 +38,12 @@ function Description({ selectedGenre }) {
 
   const randomMovie = movies[randomIndexGenre];
 
+  const watchMovie = () => {
+    if (randomMovie) {
+      window.open(`https://www.themoviedb.org/movie/${randomMovie.id}/watch`);
+    }
+  };
+
   const movieElement = randomMovie && (
     <div className="PrincipalDiv" key={randomMovie.id}>
       <div className="ImgDiv">
@@ -62,7 +68,8 @@ function Description({ selectedGenre }) {
   return (
     <main className="container">
       <div className="contained">{movieElement}</div>
-      <button className="button-watch" type="button">
+
+      <button className="button-watch" type="button" onClick={watchMovie}>
         Watch
       </button>
     </main>

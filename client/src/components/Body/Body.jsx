@@ -18,8 +18,14 @@ function Body() {
   };
 
   const handleTypeChange = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedType(selectedValue);
+    setSelectedType(event.target.value);
+  };
+
+  const handleSearchAgain = () => {
+    setIsSectionVisible(false);
+    setSelectedGenre(null);
+    setSelectedType(null);
+    setTopRatedChecked(false);
   };
 
   return (
@@ -76,23 +82,28 @@ function Body() {
           />
         </div>
 
-        <button onClick={handleSearch} className="button-search" type="button">
-          {isSectionVisible ? "Search Again" : "Search"}
+        <button
+          onClick={isSectionVisible ? handleSearchAgain : handleSearch}
+          className="button-search"
+          type="button"
+        >
+          {isSectionVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
-
       <div className="threeSection">
-        {isSectionVisible && selectedGenre && (
+        {isSectionVisible !== false && selectedGenre && (
           <Description selectedGenre={selectedGenre} />
         )}
-        {isSectionVisible && selectedType === "MovieValue" && selectedGenre && (
+
+        {isSectionVisible !== false && selectedType === "MovieValue" && (
           <MovieType />
         )}
 
-        {isSectionVisible &&
-          selectedType === "TvShowValue" &&
-          selectedGenre && <Series />}
-        {isSectionVisible && topRatedChecked && (
+        {isSectionVisible !== false && selectedType === "TvShowValue" && (
+          <Series />
+        )}
+
+        {isSectionVisible !== false && selectedGenre && (
           <TopRated topRatedChecked={topRatedChecked} />
         )}
       </div>

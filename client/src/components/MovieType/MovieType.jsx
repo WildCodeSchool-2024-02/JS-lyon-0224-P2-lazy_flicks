@@ -34,6 +34,15 @@ function MovieType() {
 
   const randomMovie = moviesType[randomIndexMovie];
 
+  const handleWatchClick = () => {
+    if (randomMovie) {
+      window.open(
+        `https://www.themoviedb.org/movie/${randomMovie.id}/watch`,
+        "_blank"
+      );
+    }
+  };
+
   const randomMovieElement = randomMovie && (
     <div className="PrincipalDiv" key={randomMovie.id}>
       <div className="ImgDiv">
@@ -54,11 +63,10 @@ function MovieType() {
       </div>
     </div>
   );
-
   return (
     <main className="container">
       <div>{randomMovieElement}</div>
-      <button className="button-watch" type="button">
+      <button className="button-watch" type="button" onClick={handleWatchClick}>
         Watch
       </button>
     </main>
