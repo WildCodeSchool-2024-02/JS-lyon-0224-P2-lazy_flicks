@@ -80,7 +80,11 @@ function Body() {
           {isSectionVisible ? "Search Again" : "Search"}
         </button>
       </div>
+
       <div className="threeSection">
+        {isSectionVisible && selectedGenre && (
+          <Description selectedGenre={selectedGenre} />
+        )}
         {isSectionVisible && selectedType === "MovieValue" && selectedGenre && (
           <MovieType />
         )}
@@ -90,10 +94,6 @@ function Body() {
           selectedGenre && <Series />}
         {isSectionVisible && topRatedChecked && (
           <TopRated topRatedChecked={topRatedChecked} />
-        )}
-
-        {isSectionVisible && selectedGenre && (
-          <Description selectedGenre={selectedGenre} />
         )}
       </div>
     </main>
