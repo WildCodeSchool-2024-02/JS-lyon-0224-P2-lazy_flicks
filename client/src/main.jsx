@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 import Team from "./components/Team/Team";
+import LightModeProvider from "./Context/ThemeContext";
 
 const router = createBrowserRouter([
   {
@@ -19,6 +20,8 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <LightModeProvider>
+      <RouterProvider router={router} />
+    </LightModeProvider>
   </React.StrictMode>
 );
