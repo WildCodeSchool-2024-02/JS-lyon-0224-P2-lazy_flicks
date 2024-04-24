@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LightModeContext } from "../Context/ThemeContext";
+import { LightModeContext } from "../../Context/ThemeContext";
 
 export default function ToggleButton() {
   const { lightMode, setLightMode } = useContext(LightModeContext);
@@ -11,7 +11,9 @@ export default function ToggleButton() {
     <div className="checkbox-wrapper-5">
       <div className="check">
         <input id="check-5" type="checkbox" onClick={toggleLightMode} />
-        <label htmlFor="check-5">click</label>
+        <label htmlFor="check-5" className="invisible-label">
+          click
+        </label>
       </div>
     </div>
   );

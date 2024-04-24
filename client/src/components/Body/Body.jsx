@@ -4,7 +4,7 @@ import Series from "../Series/Series";
 import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
 import TopRated from "../TopRated/TopRated";
-import ToggleButton from "../ToggleButton";
+import ToggleButton from "../Toggle/ToggleButton";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
