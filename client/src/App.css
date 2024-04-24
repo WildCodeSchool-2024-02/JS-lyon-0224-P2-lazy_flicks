@@ -10,7 +10,6 @@ body {
 }
 
 main {
-  padding-top: 1rem;
   padding-bottom: 8.5rem;
   display: flex;
   flex-direction: column;
@@ -22,10 +21,4 @@ main {
   padding: 0;
   text-align: center;
   min-height: 100vh;
-}
-
-@media screen and (min-width: 800px) {
-  main {
-    padding-bottom: 12rem;
-  }
 }
