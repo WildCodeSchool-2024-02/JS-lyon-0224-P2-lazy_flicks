@@ -1,29 +1,83 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-.TeamContainer {
-  margin: 0;
-  padding: 0;
-  color: #e09e50;
-  display: flex;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
+@media screen and (max-width: 800px) {
+  .TeamContainer {
+    margin: 0;
+    padding: 0;
+    color: antiquewhite;
+    background-color: #e09e50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .RomDesc {
+    width: 80vw;
+    margin: 2rem;
+    text-align: center;
+  }
+  .AlpDesc {
+    width: 80vw;
+    margin: 2rem;
+    text-align: center;
+  }
+  .ThienDesc {
+    width: 80vw;
+    margin: 2rem;
+    text-align: center;
+  }
+  .AlpImg,
+  .RomainImg,
+  .ThienImg {
+    width: 80%;
+    margin-bottom: 1rem;
+  }
+  .BackButton {
+    align-self: flex-end;
+    margin: 1rem;
+    text-decoration: none;
+    color: antiquewhite;
+  }
 }
 
-.Desc {
-  width: 30vh;
-}
-
-.Desc h2 {
-  color: #e09e50;
-}
-
-.AlpImg,
-.RomainImg,
-.ThienImg {
-  width: 100%;
-}
-
-.BackButton {
-  text-decoration: none;
-  color: #e09e50;
+@media screen and (min-width: 801px) {
+  .TeamContainer {
+    margin: 0;
+    padding: 0;
+    color: antiquewhite;
+    background-color: #e09e50;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    position: relative;
+  }
+  .ThienDesc {
+    width: 30%;
+    margin: 2rem;
+    margin-left: 25rem;
+  }
+  .AlpDesc {
+    width: 30%;
+    margin: 2rem;
+    margin-top: 5rem;
+  }
+  .RomDesc {
+    width: 30%;
+    margin: 2rem;
+    margin-top: 5rem;
+  }
+  .AlpImg,
+  .RomainImg,
+  .ThienImg {
+    width: 100%;
+  }
+  .BackButton {
+    text-decoration: none;
+    color: antiquewhite;
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 2rem;
+  }
 }

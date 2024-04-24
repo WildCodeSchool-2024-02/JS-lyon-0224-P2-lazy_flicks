@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 function Team() {
   return (
     <div className="TeamContainer">
-      <div className="Desc">
+      <Link to="/" className="BackButton">
+        Main Page
+      </Link>
+      <div className="RomDesc">
         <img
           className="RomainImg"
           src="src/assets/images/RomainImg.png"
@@ -17,7 +20,7 @@ function Team() {
           room, making even the toughest days feel a little brighter.
         </p>
       </div>
-      <div className="Desc">
+      <div className="AlpDesc">
         <img className="AlpImg" src="src/assets/images/AlpImg.png" alt="Alp" />
         <h2>Alp</h2>
         <p>
@@ -27,7 +30,7 @@ function Team() {
           member of our team.
         </p>
       </div>
-      <div className="Desc">
+      <div className="ThienDesc">
         <img
           className="ThienImg"
           src="src/assets/images/ThienImg.png"
@@ -40,9 +43,6 @@ function Team() {
           a unique flair to every project he touches.
         </p>
       </div>
-      <Link to="/" className="BackButton">
-        Main Page
-      </Link>
     </div>
   );
 }
