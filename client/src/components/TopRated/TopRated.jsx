@@ -50,7 +50,12 @@ function TopRated({ topRatedChecked }) {
         />
       </div>
       <div className="DateRate">
-        <h2>{movie.title}</h2>
+        <p>
+          <h1>Top Rated</h1>{" "}
+        </p>
+        <p>
+          <h2>{movie.title}</h2>
+        </p>
         <span className="rating">Release date : </span>
         <p>{movie.release_date}</p>
         <span className="rating">Rating :</span>

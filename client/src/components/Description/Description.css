@@ -15,6 +15,7 @@
   flex-direction: row;
   justify-content: center;
 }
+
 .PrincipalDiv {
   display: flex;
   flex-direction: row;
@@ -24,8 +25,7 @@
 }
 
 .DateRate {
-  text-align: left;
-  max-width: 160px;
+  min-width: 160px;
 }
 
 .ImgDiv {
