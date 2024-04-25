@@ -29,6 +29,7 @@ select {
   font-size: 0.9rem;
   max-width: 40vw;
   border-style: none;
+  cursor: pointer;
 }
 
 label {
@@ -76,6 +77,7 @@ input[type="checkbox"] {
 }
 input[type="checkbox"]:hover {
   color: black;
+  cursor: pointer;
 }
 
 #TopRated {
