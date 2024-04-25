@@ -24,6 +24,10 @@
   padding: 1rem;
 }
 
+.selected-topRated {
+  font-size: 25px;
+}
+
 .DateRate {
   text-align: left;
   max-width: 160px;

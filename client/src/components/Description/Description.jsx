@@ -53,7 +53,7 @@ function Description({ selectedGenre }) {
         />
       </div>
       <div className="DateRate">
-        <h2>Genre</h2>
+        <h2 className="selected-genre">Genre :</h2>
 
         <h2>{randomMovie.title}</h2>
 
