@@ -22,11 +22,6 @@ main {
   text-align: center;
   min-height: 100vh;
 }
-.invisible-label {
-  white-space: nowrap;
-  overflow: hidden;
-  color: transparent;
-}
 
 @media screen and (min-width: 800px) {
   main {
