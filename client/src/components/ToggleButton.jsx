@@ -11,7 +11,9 @@ export default function ToggleButton() {
     <div className="checkbox-wrapper-5">
       <div className="check">
         <input id="check-5" type="checkbox" onClick={toggleLightMode} />
-        <label htmlFor="check-5">click</label>
+        <label htmlFor="check-5">
+          <span className="clickCheck">Click</span>
+        </label>
       </div>
     </div>
   );
