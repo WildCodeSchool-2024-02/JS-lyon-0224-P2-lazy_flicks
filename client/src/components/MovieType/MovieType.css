@@ -24,6 +24,10 @@
   padding: 1rem;
 }
 
+.selected-movie {
+  font-size: 25px;
+}
+
 .DateRate {
   min-width: 160px;
 }
