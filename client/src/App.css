@@ -161,9 +161,3 @@ main {
 .clickCheck {
   visibility: hidden;
 }
-
-@media screen and (min-width: 800px) {
-  main {
-    padding-bottom: 8rem;
-  }
-}

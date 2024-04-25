@@ -1,11 +1,11 @@
-.HeaderLogo {
-  min-width: 60%;
-  margin-top: 2rem;
+.LogoContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
-@media screen and (min-width: 800px) {
-  .HeaderLogo {
-    max-width: 30%;
-    margin-top: 2rem;
-  }
+.HeaderLogo {
+  max-height: 100px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }

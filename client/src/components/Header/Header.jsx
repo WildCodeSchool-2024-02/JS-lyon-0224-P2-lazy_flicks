@@ -2,7 +2,7 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div>
+    <div className="LogoContainer">
       <img
         className="HeaderLogo"
         src="./src/assets/images/Logo.svg"
