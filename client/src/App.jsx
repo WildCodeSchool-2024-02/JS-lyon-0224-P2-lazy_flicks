@@ -9,8 +9,8 @@ function App() {
   const { lightMode } = useContext(LightModeContext);
   return (
     <main className="container-Global">
-      <Header />
       <div className={`app ${lightMode && "light-theme"}`}>
+        <Header />
         <Body />
       </div>
       <Footer />
