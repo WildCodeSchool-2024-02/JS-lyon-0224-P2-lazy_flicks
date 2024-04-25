@@ -52,7 +52,10 @@ function MovieType() {
         />
       </div>
       <div className="DateRate">
+        <h2>Movie</h2>
+
         <h2>{randomMovie.title}</h2>
+
         <span className="rating">Release date : </span>
         <p>{randomMovie.release_date}</p>
         <span className="rating">Rating : </span>

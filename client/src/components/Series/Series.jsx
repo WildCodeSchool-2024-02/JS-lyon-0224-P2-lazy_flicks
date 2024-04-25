@@ -59,6 +59,8 @@ function Series() {
         />
       </div>
       <div className="DateRate">
+        <h2>TV Show</h2>
+
         <h2>{randomSerie.original_name}</h2>
         <span className="rating">Release date : </span>
         <p>{randomSerie.release_date}</p>

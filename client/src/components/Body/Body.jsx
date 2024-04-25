@@ -4,6 +4,7 @@ import Series from "../Series/Series";
 import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
 import TopRated from "../TopRated/TopRated";
+import ToggleButton from "../ToggleButton";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
@@ -30,6 +31,9 @@ function Body() {
 
   return (
     <main>
+      <div>
+        <ToggleButton />
+      </div>
       <div className="card">
         <div className="genre">
           <h2>Genre :</h2>
@@ -64,7 +68,7 @@ function Body() {
         </div>
         <div className="genre">
           <h2>Type :</h2>
-          <select onChange={handleTypeChange}>
+          <select className="selectType" onChange={handleTypeChange}>
             <option value="">Select a type</option>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>
