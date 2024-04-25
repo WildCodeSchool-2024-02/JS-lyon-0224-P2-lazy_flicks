@@ -68,7 +68,7 @@ function Body() {
         </div>
         <div className="genre">
           <h2>Type :</h2>
-          <select onChange={handleTypeChange}>
+          <select className="selectType" onChange={handleTypeChange}>
             <option value="">Select a type</option>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>

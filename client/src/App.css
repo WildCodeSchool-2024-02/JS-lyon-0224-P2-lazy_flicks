@@ -156,6 +156,11 @@ main {
 
 .light-theme {
   background-color: white;
+  width: 100vw;
+}
+
+.light-theme .card {
+  background-color: white;
 }
 
 .clickCheck {

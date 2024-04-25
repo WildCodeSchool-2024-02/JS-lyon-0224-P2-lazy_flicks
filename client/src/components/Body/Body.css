@@ -179,3 +179,15 @@ select option {
     border-style: none;
   }
 }
+
+.light-theme .card {
+  background-color: white;
+}
+
+.light-theme .GenreInput {
+  border: solid #e09e50;
+}
+
+.light-theme .selectType {
+  border: solid #e09e50;
+}
