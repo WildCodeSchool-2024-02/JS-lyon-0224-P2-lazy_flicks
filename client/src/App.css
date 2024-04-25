@@ -165,5 +165,12 @@ main {
 }
 .light-theme {
   background-color: white;
+}
+
+.light-theme h2 {
   color: #0e3249;
+}
+
+.clickCheck {
+  visibility: hidden;
 }
