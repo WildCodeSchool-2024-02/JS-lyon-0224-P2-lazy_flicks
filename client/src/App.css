@@ -10,7 +10,7 @@ body {
 }
 
 main {
-  padding-bottom: 8.5rem;
+  padding-bottom: 6rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,12 +21,7 @@ main {
   padding: 0;
   text-align: center;
   min-height: 100vh;
-}
-
-@media screen and (min-width: 800px) {
-  main {
-    padding-bottom: 8rem;
-  }
+  position: relative;
 }
 
 .checkbox-wrapper-5 .check {
@@ -158,7 +153,14 @@ main {
   font-size: calc(0.6 * var(--size));
   line-height: 0;
 }
+
 .light-theme {
   background-color: white;
   color: #0e3249;
+}
+
+@media screen and (min-width: 800px) {
+  main {
+    padding-bottom: 8rem;
+  }
 }

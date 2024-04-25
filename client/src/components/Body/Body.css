@@ -8,7 +8,6 @@
   flex-direction: column;
   justify-content: start;
   min-width: 20rem;
-  margin-top: 70px;
   max-height: 30rem;
 }
 
@@ -66,7 +65,7 @@ label {
   color: #e09e50;
   display: flex;
   align-items: center;
-  height: 15vw;
+  height: 13vw;
   justify-content: space-evenly;
 }
 
@@ -176,7 +175,7 @@ option {
   }
 
   .Rated {
-    height: 5vw;
+    height: 4vw;
   }
 
   select {
