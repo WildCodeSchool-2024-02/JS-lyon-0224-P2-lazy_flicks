@@ -1,4 +1,4 @@
-import "./MovieType.css";
+import "../Description.css";
 import { useState, useEffect } from "react";
 
 function MovieType() {
@@ -52,7 +52,7 @@ function MovieType() {
         />
       </div>
       <div className="DateRate">
-        <h2 className="selected-movie">Movie :</h2>
+        <h2 className="selected-topRated">Movie :</h2>
 
         <h2>{randomMovie.title}</h2>
 

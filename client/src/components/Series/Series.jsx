@@ -1,4 +1,4 @@
-import "./Series.css";
+import "../Description.css";
 import { useState, useEffect } from "react";
 
 function Series() {
@@ -59,7 +59,7 @@ function Series() {
         />
       </div>
       <div className="DateRate">
-        <h2 className="selected-serie">TV Show :</h2>
+        <h2 className="selected-topRated">TV Show :</h2>
 
         <h2>{randomSerie.original_name}</h2>
         <span className="rating">Release date : </span>

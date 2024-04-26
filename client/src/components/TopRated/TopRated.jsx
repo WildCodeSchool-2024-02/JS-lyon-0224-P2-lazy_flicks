@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./TopRated.css";
+import "../Description.css";
 import PropTypes from "prop-types";
 
 function TopRated({ topRatedChecked }) {
