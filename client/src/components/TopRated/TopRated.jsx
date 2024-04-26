@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./TopRated.css";
+import "../Description.css";
 import PropTypes from "prop-types";
 
 function TopRated({ topRatedChecked }) {
@@ -50,7 +50,7 @@ function TopRated({ topRatedChecked }) {
         />
       </div>
       <div className="DateRate">
-        <h2>Top Rated</h2>
+        <h2 className="selected-topRated">Top Rated :</h2>
 
         <h2>{movie.title}</h2>
         <span className="rating">Release date : </span>

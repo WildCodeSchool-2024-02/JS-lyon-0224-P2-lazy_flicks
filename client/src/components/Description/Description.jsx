@@ -1,4 +1,4 @@
-import "./Description.css";
+import "../Description.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
@@ -53,7 +53,7 @@ function Description({ selectedGenre }) {
         />
       </div>
       <div className="DateRate">
-        <h2>Genre</h2>
+        <h2 className="selected-topRated">Genre :</h2>
 
         <h2>{randomMovie.title}</h2>
 
