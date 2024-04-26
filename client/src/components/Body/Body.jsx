@@ -13,7 +13,7 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    if (selectedGenre && selectedType) {
+    if (selectedGenre !== null && selectedType !== null) {
       setIsSectionVisible(true);
     }
   };
@@ -87,7 +87,9 @@ function Body() {
         </div>
 
         <button
-          onClick={isSectionVisible ? handleSearchAgain : handleSearch}
+          onClick={
+            isSectionVisible !== false ? handleSearchAgain : handleSearch
+          }
           className="button-search"
           type="button"
         >
