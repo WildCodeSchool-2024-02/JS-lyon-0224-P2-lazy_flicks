@@ -6,7 +6,7 @@ function TopRated({ topRatedChecked }) {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    if (topRatedChecked) {
+    if (topRatedChecked !== false) {
       const ApiKey = import.meta.env.VITE_API_KEY;
 
       const options = {
@@ -25,7 +25,7 @@ function TopRated({ topRatedChecked }) {
         .then((data) => {
           const randomIndex = Math.floor(Math.random() * data.results.length);
           const randomMovie = data.results[randomIndex];
-          setMovies(randomMovie ? [randomMovie] : []);
+          setMovies(randomMovie !== null ? [randomMovie] : []);
         })
         .catch((err) => console.error(err));
     }
@@ -71,7 +71,7 @@ function TopRated({ topRatedChecked }) {
 
   return (
     <main className="container">
-      {topRatedChecked && <div>{movieElements}</div>}
+      {topRatedChecked !== false && <div>{movieElements}</div>}
 
       {topRatedChecked && (
         <button

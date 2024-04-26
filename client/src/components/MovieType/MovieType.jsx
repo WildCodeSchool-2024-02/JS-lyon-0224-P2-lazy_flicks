@@ -35,7 +35,7 @@ function MovieType() {
   const randomMovie = moviesType[randomIndexMovie];
 
   const handleWatchClick = () => {
-    if (randomMovie) {
+    if (randomMovie !== null) {
       window.open(
         `https://www.themoviedb.org/movie/${randomMovie.id}/watch`,
         "_blank"

@@ -21,7 +21,7 @@ function Series() {
       options
     )
       .then((response) => {
-        if (!response.ok) {
+        if (!response.ok === true) {
           throw new Error("Failed to fetch series");
         }
         return response.json();
@@ -42,7 +42,7 @@ function Series() {
   const randomSerie = series[randomIndexSerie];
 
   const handleWatchButtonClick = () => {
-    if (randomSerie) {
+    if (randomSerie !== null) {
       window.open(
         `https://www.themoviedb.org/tv/${randomSerie.id}/watch`,
         "_blank"

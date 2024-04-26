@@ -39,7 +39,7 @@ function Description({ selectedGenre }) {
   const randomMovie = movies[randomIndexGenre];
 
   const watchMovie = () => {
-    if (randomMovie) {
+    if (randomMovie !== null) {
       window.open(`https://www.themoviedb.org/movie/${randomMovie.id}/watch`);
     }
   };
