@@ -1,4 +1,4 @@
-import "./Description.css";
+import "../Description.css";
 import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
@@ -39,12 +39,12 @@ function Description({ selectedGenre }) {
   const randomMovie = movies[randomIndexGenre];
 
   const watchMovie = () => {
-    if (randomMovie) {
+    if (randomMovie !== null) {
       window.open(`https://www.themoviedb.org/movie/${randomMovie.id}/watch`);
     }
   };
 
-  const movieElement = randomMovie && (
+  const movieElement = randomMovie ? (
     <div className="PrincipalDiv" key={randomMovie.id}>
       <div className="ImgDiv">
         <img
@@ -53,7 +53,7 @@ function Description({ selectedGenre }) {
         />
       </div>
       <div className="DateRate">
-        <h2 className="selected-genre">Genre :</h2>
+        <h2 className="selected-topRated">Genre :</h2>
 
         <h2>{randomMovie.title}</h2>
 
@@ -66,7 +66,7 @@ function Description({ selectedGenre }) {
         <p>{randomMovie.overview}</p>
       </div>
     </div>
-  );
+  ) : null;
 
   return (
     <main className="container">

@@ -9,7 +9,7 @@ function App() {
   const { lightMode } = useContext(LightModeContext);
   return (
     <main className="container-Global">
-      <div className={`app ${lightMode && "light-theme"}`}>
+      <div className={`app ${lightMode !== false && "light-theme"}`}>
         <Header />
         <Body />
       </div>

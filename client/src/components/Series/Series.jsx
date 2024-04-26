@@ -1,4 +1,4 @@
-import "./Series.css";
+import "../Description.css";
 import { useState, useEffect } from "react";
 
 function Series() {
@@ -21,7 +21,7 @@ function Series() {
       options
     )
       .then((response) => {
-        if (!response.ok) {
+        if (!response.ok === true) {
           throw new Error("Failed to fetch series");
         }
         return response.json();
@@ -42,7 +42,7 @@ function Series() {
   const randomSerie = series[randomIndexSerie];
 
   const handleWatchButtonClick = () => {
-    if (randomSerie) {
+    if (randomSerie !== null) {
       window.open(
         `https://www.themoviedb.org/tv/${randomSerie.id}/watch`,
         "_blank"
@@ -50,7 +50,7 @@ function Series() {
     }
   };
 
-  const randomSerieElement = randomSerie && (
+  const randomSerieElement = randomSerie ? (
     <div className="PrincipalDiv">
       <div className="ImgDiv" key={randomSerie.id}>
         <img
@@ -59,7 +59,7 @@ function Series() {
         />
       </div>
       <div className="DateRate">
-        <h2 className="selected-serie">TV Show :</h2>
+        <h2 className="selected-topRated">TV Show :</h2>
 
         <h2>{randomSerie.original_name}</h2>
         <span className="rating">Release date : </span>
@@ -71,7 +71,7 @@ function Series() {
         <p>{randomSerie.overview}</p>
       </div>
     </div>
-  );
+  ) : null;
 
   return (
     <main className="container">
