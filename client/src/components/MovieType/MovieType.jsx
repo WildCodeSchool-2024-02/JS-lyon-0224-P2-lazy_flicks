@@ -43,7 +43,7 @@ function MovieType() {
     }
   };
 
-  const randomMovieElement = randomMovie && (
+  const randomMovieElement = randomMovie ? (
     <div className="PrincipalDiv" key={randomMovie.id}>
       <div className="ImgDiv">
         <img
@@ -52,7 +52,7 @@ function MovieType() {
         />
       </div>
       <div className="DateRate">
-        <h2 className="selected-topRated">Movie :</h2>
+        <h2 className="selected-topRated">Movie</h2>
 
         <h2>{randomMovie.title}</h2>
 
@@ -65,7 +65,7 @@ function MovieType() {
         <p>{randomMovie.overview}</p>
       </div>
     </div>
-  );
+  ) : null;
   return (
     <main className="container">
       <div>{randomMovieElement}</div>

@@ -44,7 +44,7 @@ function Description({ selectedGenre }) {
     }
   };
 
-  const movieElement = randomMovie && (
+  const movieElement = randomMovie ? (
     <div className="PrincipalDiv" key={randomMovie.id}>
       <div className="ImgDiv">
         <img
@@ -66,7 +66,7 @@ function Description({ selectedGenre }) {
         <p>{randomMovie.overview}</p>
       </div>
     </div>
-  );
+  ) : null;
 
   return (
     <main className="container">

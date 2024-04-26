@@ -50,7 +50,7 @@ function Series() {
     }
   };
 
-  const randomSerieElement = randomSerie && (
+  const randomSerieElement = randomSerie ? (
     <div className="PrincipalDiv">
       <div className="ImgDiv" key={randomSerie.id}>
         <img
@@ -71,7 +71,7 @@ function Series() {
         <p>{randomSerie.overview}</p>
       </div>
     </div>
-  );
+  ) : null;
 
   return (
     <main className="container">
