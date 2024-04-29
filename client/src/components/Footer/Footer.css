@@ -1,4 +1,4 @@
-.FooterLazy {
+.footerLazy {
   width: 100%;
   color: white;
   background-color: #e09e50;
@@ -15,17 +15,17 @@
   width: 100%;
 }
 
-.Copyright {
+.copyright {
   margin: 0;
   padding: 0;
 }
-.TeamButton {
+.teamButton {
   text-decoration: none;
   color: white;
 }
 
 @media screen and (min-width: 800px) {
-  .FooterLazy {
+  .footerLazy {
     width: 100%;
     color: white;
     background-color: #e09e50;

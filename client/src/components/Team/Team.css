@@ -12,7 +12,7 @@
   max-height: 30rem;
 }
 
-.TeamContainer {
+.teamContainer {
   margin: 0;
   padding: 0;
   color: antiquewhite;
@@ -22,7 +22,7 @@
   align-items: center;
   height: 100%;
 }
-.RomDesc {
+.romDesc {
   width: 70vw;
   margin: 2rem;
   text-align: center;
@@ -30,7 +30,7 @@
   border-radius: 20px;
   padding: 2rem;
 }
-.AlpDesc {
+.alpDesc {
   width: 70vw;
   margin: 2rem;
   text-align: center;
@@ -38,7 +38,7 @@
   border-radius: 20px;
   padding: 2rem;
 }
-.ThienDesc {
+.thienDesc {
   width: 70vw;
   margin: 2rem;
   text-align: center;
@@ -46,29 +46,29 @@
   border-radius: 20px;
   padding: 2rem;
 }
-.AlpImg,
-.RomainImg,
-.ThienImg {
+.alpImg,
+.romainImg,
+.thienImg {
   width: 50%;
   margin-bottom: 1rem;
 }
-.BackButton {
+.backButton {
   align-self: flex-end;
   margin: 1rem;
   text-decoration: none;
   color: antiquewhite;
 }
 
-.TeamMember {
+.teamMember {
   font-size: large;
   padding-bottom: 1rem;
 }
 
-.DescMember {
+.descMember {
   text-align: justify;
 }
 @media screen and (min-width: 801px) {
-  .TeamContainer {
+  .teamContainer {
     margin: 0;
     padding: 0;
     color: antiquewhite;
@@ -77,19 +77,19 @@
     height: 48vw;
     justify-content: space-evenly;
   }
-  .ThienDesc .AlpDesc .RomDesc {
+  .thienDesc .alpDesc .romDesc {
     width: 80vw;
     padding: 2rem;
     border: 3px solid #e09e50;
     border-radius: 20px;
   }
 
-  .AlpImg,
-  .RomainImg,
-  .ThienImg {
+  .alpImg,
+  .romainImg,
+  .thienImg {
     width: 50%;
   }
-  .BackButton {
+  .backButton {
     text-decoration: none;
     color: antiquewhite;
     display: flex;

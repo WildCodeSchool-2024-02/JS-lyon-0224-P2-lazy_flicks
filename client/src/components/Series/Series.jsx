@@ -51,14 +51,14 @@ function Series() {
   };
 
   const randomSerieElement = randomSerie ? (
-    <div className="PrincipalDiv">
-      <div className="ImgDiv" key={randomSerie.id}>
+    <div className="principalDiv">
+      <div className="imgDiv" key={randomSerie.id}>
         <img
           src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
           alt={randomSerie.original_name}
         />
       </div>
-      <div className="DateRate">
+      <div className="dateRate">
         <h2 className="selected-topRated">TV Show :</h2>
 
         <h2>{randomSerie.original_name}</h2>
@@ -67,7 +67,7 @@ function Series() {
         <span className="rating">Rating :</span>
         <p>{randomSerie.vote_average} / 10</p>
       </div>
-      <div className="Overview">
+      <div className="overview">
         <p>{randomSerie.overview}</p>
       </div>
     </div>

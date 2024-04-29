@@ -3,10 +3,10 @@ import "./Footer.css";
 
 function Footer() {
   return (
-    <footer className="FooterLazy">
-      <p className="Copyright">
+    <footer className="footerLazy">
+      <p className="copyright">
         LazyFlicks Copyright © 2024 -
-        <Link to="/team" className="TeamButton">
+        <Link to="/team" className="teamButton">
           Team
         </Link>
       </p>

@@ -44,14 +44,14 @@ function MovieType() {
   };
 
   const randomMovieElement = randomMovie ? (
-    <div className="PrincipalDiv" key={randomMovie.id}>
-      <div className="ImgDiv">
+    <div className="principalDiv" key={randomMovie.id}>
+      <div className="imgDiv">
         <img
           src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
           alt={randomMovie.title}
         />
       </div>
-      <div className="DateRate">
+      <div className="dateRate">
         <h2 className="selected-topRated">Movie</h2>
 
         <h2>{randomMovie.title}</h2>
@@ -61,7 +61,7 @@ function MovieType() {
         <span className="rating">Rating : </span>
         <p>{randomMovie.vote_average}/ 10</p>
       </div>
-      <div className="Overview">
+      <div className="overview">
         <p>{randomMovie.overview}</p>
       </div>
     </div>
