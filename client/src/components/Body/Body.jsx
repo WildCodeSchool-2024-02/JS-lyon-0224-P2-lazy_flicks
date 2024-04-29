@@ -4,6 +4,7 @@ import Series from "../Series/Series";
 import MovieType from "../MovieType/MovieType";
 import Description from "../Description/Description";
 import TopRated from "../TopRated/TopRated";
+import ToggleButton from "../ToggleButton";
 
 function Body() {
   const [topRatedChecked, setTopRatedChecked] = useState(false);
@@ -12,20 +13,35 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    setIsSectionVisible(true);
+    if (
+      selectedGenre !== null &&
+      selectedType !== null &&
+      topRatedChecked !== false
+    ) {
+      setIsSectionVisible(true);
+    }
   };
 
   const handleTypeChange = (event) => {
-    const selectedValue = event.target.value;
-    setSelectedType(selectedValue);
+    setSelectedType(event.target.value);
+  };
+
+  const handleSearchAgain = () => {
+    setIsSectionVisible(false);
+    setSelectedGenre(null);
+    setSelectedType(null);
+    setTopRatedChecked(false);
   };
 
   return (
     <main>
+      <div>
+        <ToggleButton />
+      </div>
       <div className="card">
         <div className="genre">
           <h2>Genre :</h2>
-          <span className="GenreInput">
+          <span className="genreInput">
             <select
               name="movie"
               id="movie-select"
@@ -56,15 +72,16 @@ function Body() {
         </div>
         <div className="genre">
           <h2>Type :</h2>
-          <select onChange={handleTypeChange}>
-            <option value="">Select a movie</option>
+          <select className="selectType" onChange={handleTypeChange}>
+            <option value="">Select a type</option>
             <option value="MovieValue">Movie</option>
             <option value="TvShowValue">TV Show</option>
           </select>
         </div>
-        <div className="Rated">
+        <div className="rated">
           <h2>Top Rated :</h2>
           <input
+            className="inputCheck"
             type="checkbox"
             id="TopRated"
             name="Top Rated"
@@ -73,26 +90,35 @@ function Body() {
           />
         </div>
 
-        <button onClick={handleSearch} className="button-search" type="button">
+        <button
+          onClick={
+            isSectionVisible !== false ? handleSearchAgain : handleSearch
+          }
+          className="button-search"
+          type="button"
+        >
           {isSectionVisible !== false ? "Search Again" : "Search"}
         </button>
       </div>
-
-      {isSectionVisible !== false && selectedType === "MovieValue" && (
-        <MovieType />
-      )}
-
-      {isSectionVisible !== false && selectedType === "TvShowValue" && (
-        <Series />
-      )}
-
-      {isSectionVisible !== false && selectedGenre && (
-        <div>
-          <TopRated topRatedChecked={topRatedChecked} />
+      <div className="threeSection">
+        {isSectionVisible !== false && selectedGenre !== null && (
           <Description selectedGenre={selectedGenre} />
-        </div>
-      )}
+        )}
+
+        {isSectionVisible !== false && selectedType === "MovieValue" && (
+          <MovieType />
+        )}
+
+        {isSectionVisible !== false && selectedType === "TvShowValue" && (
+          <Series />
+        )}
+
+        {isSectionVisible !== false && selectedGenre !== null && (
+          <TopRated topRatedChecked={topRatedChecked} />
+        )}
+      </div>
     </main>
   );
 }
+
 export default Body;

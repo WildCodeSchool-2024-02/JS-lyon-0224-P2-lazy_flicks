@@ -4,26 +4,61 @@
   padding: 10px;
   margin: 20px;
   background-color: rgba(30, 30, 30, 0.321);
-  min-width: 20rem;
+  max-width: 20rem;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  position: relative;
+  min-height: 30vh;
 }
 
-.PicDescOver {
+.picDescOver {
   display: flex;
   flex-direction: row;
   justify-content: center;
 }
-
-img {
+.selected-topRated {
+  font-size: 25px;
+}
+.principalDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 1rem;
-  width: 30%;
-  height: 30%;
 }
 
-h1 {
+.dateRate {
+  max-width: 140px;
+  text-align: left;
+}
+
+.imgDiv {
+  max-width: 120px;
+  height: 100%;
+}
+
+.imgDiv img {
+  width: 100%;
+  padding: 0;
+}
+
+.overview {
+  text-align: justify;
+  margin-bottom: 6rem;
+  margin-top: 1rem;
+}
+
+h1,
+h2 {
   color: #e09e50;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+.selected-genre {
+  font-size: 25px;
 }
 
 .rating {
@@ -37,19 +72,22 @@ h1 {
 }
 
 .button-watch {
+  width: 80%;
   padding: 0.6em 2em;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
   border: none;
   outline: none;
   color: #eee;
   background: #111;
   cursor: pointer;
-  position: relative;
+  position: absolute;
   z-index: 0;
   border-radius: 10px;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  margin: 2rem;
+  bottom: 0;
 }
 
 .button-watch:before {
@@ -78,6 +116,7 @@ h1 {
   animation: glowing-button-85 20s linear infinite;
   transition: opacity 0.3s ease-in-out;
   border-radius: 10px;
+  bottom: 0;
 }
 
 @keyframes glowing-button-85 {
@@ -100,6 +139,11 @@ h1 {
   height: 100%;
   background: #222;
   left: 0;
-  top: 0;
+  bottom: 0;
   border-radius: 10px;
+}
+
+.light-theme .container {
+  background-color: white;
+  color: black;
 }

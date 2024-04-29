@@ -2,9 +2,9 @@ import "./Header.css";
 
 function Header() {
   return (
-    <div>
+    <div className="logoContainer">
       <img
-        className="HeaderLogo"
+        className="headerLogo"
         src="./src/assets/images/Logo.svg"
         alt="Logo LazyFlicks"
       />
