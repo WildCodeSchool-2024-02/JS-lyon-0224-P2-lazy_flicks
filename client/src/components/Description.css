@@ -12,7 +12,7 @@
   min-height: 30vh;
 }
 
-.PicDescOver {
+.picDescOver {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,7 +20,7 @@
 .selected-topRated {
   font-size: 25px;
 }
-.PrincipalDiv {
+.principalDiv {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,22 +28,22 @@
   padding: 1rem;
 }
 
-.DateRate {
+.dateRate {
   max-width: 140px;
   text-align: left;
 }
 
-.ImgDiv {
+.imgDiv {
   max-width: 120px;
   height: 100%;
 }
 
-.ImgDiv img {
+.imgDiv img {
   width: 100%;
   padding: 0;
 }
 
-.Overview {
+.overview {
   text-align: justify;
   margin-bottom: 6rem;
   margin-top: 1rem;

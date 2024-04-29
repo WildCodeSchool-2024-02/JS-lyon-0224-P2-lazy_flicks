@@ -62,7 +62,7 @@ label {
   font-size: larger;
 }
 
-.Rated {
+.rated {
   color: #e09e50;
   display: flex;
   align-items: center;
@@ -80,7 +80,7 @@ input[type="checkbox"]:hover {
   cursor: pointer;
 }
 
-#TopRated {
+#topRated {
   margin-left: 2rem;
 }
 
@@ -169,7 +169,7 @@ select option {
     height: 5vw;
   }
 
-  .Rated {
+  .rated {
     height: 4vw;
   }
 
