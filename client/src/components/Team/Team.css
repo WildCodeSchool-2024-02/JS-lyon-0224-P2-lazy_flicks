@@ -47,11 +47,34 @@
   padding: 2rem;
 }
 .alpImg,
-.romainImg,
-.thienImg {
+.romainImg {
   width: 50%;
   margin-bottom: 1rem;
 }
+
+.figure {
+  position: relative;
+}
+
+.figure img.sirv.image-main {
+  width: 100%;
+}
+
+.figure img.sirv.image-hover {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  width: 100%;
+}
+
+.figure:hover img.sirv.image-hover {
+  opacity: 1;
+}
+
 .backButton {
   align-self: flex-end;
   margin: 1rem;
