@@ -13,7 +13,11 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    if (selectedGenre !== null && selectedType !== null) {
+    if (
+      selectedGenre !== null &&
+      selectedType !== null &&
+      topRatedChecked !== false
+    ) {
       setIsSectionVisible(true);
     }
   };
