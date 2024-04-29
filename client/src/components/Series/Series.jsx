@@ -50,28 +50,29 @@ function Series() {
     }
   };
 
-  const randomSerieElement = randomSerie ? (
-    <div className="principalDiv">
-      <div className="imgDiv" key={randomSerie.id}>
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
-          alt={randomSerie.original_name}
-        />
-      </div>
-      <div className="dateRate">
-        <h2 className="selected-topRated">TV Show :</h2>
+  const randomSerieElement =
+    randomSerie !== null && randomSerie !== undefined ? (
+      <div className="principalDiv">
+        <div className="imgDiv" key={randomSerie.id}>
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${randomSerie.poster_path}`}
+            alt={randomSerie.original_name}
+          />
+        </div>
+        <div className="dateRate">
+          <h2 className="selected-topRated">TV Show :</h2>
 
-        <h2>{randomSerie.original_name}</h2>
-        <span className="rating">Release date : </span>
-        <p>{randomSerie.release_date}</p>
-        <span className="rating">Rating :</span>
-        <p>{randomSerie.vote_average} / 10</p>
+          <h2>{randomSerie.original_name}</h2>
+          <span className="rating">Release date : </span>
+          <p>{randomSerie.release_date}</p>
+          <span className="rating">Rating :</span>
+          <p>{randomSerie.vote_average} / 10</p>
+        </div>
+        <div className="overview">
+          <p>{randomSerie.overview}</p>
+        </div>
       </div>
-      <div className="overview">
-        <p>{randomSerie.overview}</p>
-      </div>
-    </div>
-  ) : null;
+    ) : null;
 
   return (
     <main className="container">
