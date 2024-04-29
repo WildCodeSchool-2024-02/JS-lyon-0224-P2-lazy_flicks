@@ -44,29 +44,30 @@ function Description({ selectedGenre }) {
     }
   };
 
-  const movieElement = randomMovie ? (
-    <div className="principalDiv" key={randomMovie.id}>
-      <div className="imgDiv">
-        <img
-          src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
-          alt={randomMovie.title}
-        />
-      </div>
-      <div className="dateRate">
-        <h2 className="selected-topRated">Genre :</h2>
+  const movieElement =
+    randomMovie !== null && randomMovie !== undefined ? (
+      <div className="principalDiv" key={randomMovie.id}>
+        <div className="imgDiv">
+          <img
+            src={`https://image.tmdb.org/t/p/w500/${randomMovie.poster_path}`}
+            alt={randomMovie.title}
+          />
+        </div>
+        <div className="dateRate">
+          <h2 className="selected-topRated">Genre :</h2>
 
-        <h2>{randomMovie.title}</h2>
+          <h2>{randomMovie.title}</h2>
 
-        <span className="rating">Release date : </span>
-        <p>{randomMovie.release_date}</p>
-        <span className="rating">Rating :</span>
-        <p>{randomMovie.vote_average} / 10</p>
+          <span className="rating">Release date : </span>
+          <p>{randomMovie.release_date}</p>
+          <span className="rating">Rating :</span>
+          <p>{randomMovie.vote_average} / 10</p>
+        </div>
+        <div className="overview">
+          <p>{randomMovie.overview}</p>
+        </div>
       </div>
-      <div className="overview">
-        <p>{randomMovie.overview}</p>
-      </div>
-    </div>
-  ) : null;
+    ) : null;
 
   return (
     <main className="container">
