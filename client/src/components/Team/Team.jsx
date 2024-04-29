@@ -1,12 +1,16 @@
 import "./Team.css";
+import "../Header/Header.css";
 import { Link } from "react-router-dom";
+import Header from "../Header/Header";
 
 function Team() {
   return (
     <div className="teamContainer">
+      <Header />
       <Link to="/" className="backButton">
         Main Page
       </Link>
+
       <div className="romDesc">
         <img
           className="romainImg"
