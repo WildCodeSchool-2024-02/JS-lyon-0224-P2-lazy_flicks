@@ -6,11 +6,12 @@ import Header from "../Header/Header";
 function Team() {
   return (
     <div className="teamContainer">
-      <Header />
       <Link to="/" className="backButton">
         Main Page
       </Link>
-
+      <div>
+        <Header />
+      </div>
       <div className="romDesc">
         <img
           className="romainImg"
