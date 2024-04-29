@@ -13,7 +13,11 @@ function Body() {
   const [selectedType, setSelectedType] = useState(null);
 
   const handleSearch = () => {
-    if (selectedGenre !== null && selectedType !== null) {
+    if (
+      selectedGenre !== null &&
+      selectedType !== null &&
+      topRatedChecked !== false
+    ) {
       setIsSectionVisible(true);
     }
   };
@@ -37,7 +41,7 @@ function Body() {
       <div className="card">
         <div className="genre">
           <h2>Genre :</h2>
-          <span className="GenreInput">
+          <span className="genreInput">
             <select
               name="movie"
               id="movie-select"
@@ -74,7 +78,7 @@ function Body() {
             <option value="TvShowValue">TV Show</option>
           </select>
         </div>
-        <div className="Rated">
+        <div className="rated">
           <h2>Top Rated :</h2>
           <input
             className="inputCheck"
@@ -97,7 +101,7 @@ function Body() {
         </button>
       </div>
       <div className="threeSection">
-        {isSectionVisible !== false && selectedGenre && (
+        {isSectionVisible !== false && selectedGenre !== null && (
           <Description selectedGenre={selectedGenre} />
         )}
 
@@ -109,7 +113,7 @@ function Body() {
           <Series />
         )}
 
-        {isSectionVisible !== false && selectedGenre && (
+        {isSectionVisible !== false && selectedGenre !== null && (
           <TopRated topRatedChecked={topRatedChecked} />
         )}
       </div>
