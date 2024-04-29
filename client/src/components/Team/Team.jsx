@@ -17,12 +17,12 @@ function Team() {
           <img
             className="sirv image-main"
             src="src/assets/images/RomainImg.png"
-            alt="thien"
+            alt="Romain"
           />
           <img
             className="sirv image-hover"
             src="src/assets/images/RomainImg2.png"
-            alt="thien"
+            alt="Romain"
           />
         </div>
         <h2 className="teamMember">ROMAIN</h2>
@@ -33,7 +33,18 @@ function Team() {
         </p>
       </div>
       <div className="alpDesc">
-        <img className="alpImg" src="src/assets/images/AlpImg.png" alt="Alp" />
+        <div className="figure">
+          <img
+            className="sirv image-main"
+            src="src/assets/images/AlpImg.png"
+            alt="Alp"
+          />
+          <img
+            className="sirv image-hover"
+            src="src/assets/images/AlpImg2.png"
+            alt="Alp"
+          />
+        </div>
         <h2 className="teamMember">ALP</h2>
         <p className="descMember">
           Alp is the epitome of kindness in our team. Always with a warm smile
