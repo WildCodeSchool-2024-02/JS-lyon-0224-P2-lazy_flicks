@@ -21,7 +21,7 @@ function Series() {
       options
     )
       .then((response) => {
-        if (!response.ok === true) {
+        if (response.ok !== true) {
           throw new Error("Failed to fetch series");
         }
         return response.json();
