@@ -13,11 +13,18 @@ function Team() {
         <Header />
       </div>
       <div className="romDesc">
-        <img
-          className="romainImg"
-          src="src/assets/images/RomainImg.png"
-          alt="Romain"
-        />
+        <div className="figure">
+          <img
+            className="sirv image-main"
+            src="src/assets/images/RomainImg.png"
+            alt="thien"
+          />
+          <img
+            className="sirv image-hover"
+            src="src/assets/images/RomainImg2.png"
+            alt="thien"
+          />
+        </div>
         <h2 className="teamMember">ROMAIN</h2>
         <p className="descMember">
           Romain is the embodiment of warmth and joy in our workplace. His
@@ -35,11 +42,18 @@ function Team() {
         </p>
       </div>
       <div className="thienDesc">
-        <img
-          className="thienImg"
-          src="src/assets/images/ThienImg.png"
-          alt="Thien"
-        />
+        <div className="figure">
+          <img
+            className="sirv image-main"
+            src="src/assets/images/ThienImg.png"
+            alt="thien"
+          />
+          <img
+            className="sirv image-hover"
+            src="src/assets/images/ThienImg2.png"
+            alt="thien"
+          />
+        </div>
         <h2 className="teamMember">THIEN</h2>
         <p className="descMember">
           Thien's creativity knows no bounds, consistently crafting designs that
